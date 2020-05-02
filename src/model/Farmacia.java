@@ -116,8 +116,8 @@ public class Farmacia {
 	/**
 	 * Este metodo permite buscar un cliente especial
 	 * 
-	 * @param n id del cliente que se está buscando
-	 * @return el cliente especial que se está buscando
+	 * @param n id del cliente que se esta buscando
+	 * @return el cliente especial que se esta buscando
 	 */
 	public ClienteFarmacia buscarPorClienteEspecial(int n) {
 		ClienteFarmacia current = primero;
@@ -167,7 +167,7 @@ public class Farmacia {
 	 * Este metodo permite inserta un producto en la lista enlazada
 	 * 
 	 * @param fechaDeLlegada    fecha de llegada del producto
-	 * @param horario           horario en que llegó el producto
+	 * @param horario           horario en que llega el producto
 	 * @param nombreDeLaMarca   nombre de la marca del producto
 	 * @param codigoDelProducto codigo del producto
 	 * @param nombreDelProducto nombre del producto
@@ -232,7 +232,7 @@ public class Farmacia {
 	}
 
 	/**
-	 * metodo permite obtener el numero de productos de la farmacia
+	 * Metodo permite obtener el numero de productos de la farmacia
 	 * 
 	 * @return
 	 */
@@ -240,12 +240,17 @@ public class Farmacia {
 		return numeroDeProductos;
 	}
 
+	/**
+	 * Metodo permite cambiar el numero de productos de la farmacia
+	 * 
+	 * @param numeroDeProductos el nuevo numero de productos
+	 */
 	public void setNumeroDeProductos(int numeroDeProductos) {
 		this.numeroDeProductos = numeroDeProductos;
 	}
 
 	/**
-	 * este metodo permite obtener el primer producto de la farmacia
+	 * Este metodo permite obtener el primer producto de la farmacia
 	 * 
 	 * @return
 	 */
@@ -253,18 +258,29 @@ public class Farmacia {
 		return primerProducto;
 	}
 
+	/**
+	 * Este metodo permite obtener el primer producto de la farmacia
+	 * 
+	 * param primerProducto el nuevo primer producto
+	 */
 	public void setPrimerProducto(Producto primerProducto) {
 		this.primerProducto = primerProducto;
 	}
 
 	/**
-	 * este metodo permite obtener el primer elemento de la lista de marcas
+	 * Este metodo permite obtener el primer elemento de la lista de marcas
 	 * 
-	 * @return
+	 * @return ListaDeMarcas la primera marca
 	 */
 	public ListaDeMarcas getPrimerasMarcas() {
 		return primerMarca;
 	}
+
+	/**
+	 * Este metodo permite modificar las primeras marcas
+	 * 
+	 * @param primerasMarcas la nueva primera marca
+	 */
 
 	public void setPrimerasMarcas(ListaDeMarcas primerasMarcas) {
 		this.primerMarca = primerasMarcas;

@@ -231,7 +231,7 @@ public class Farmacia {
 		}
 	}
 
-<<<<<<< HEAD
+
 	/** metodo permite obtener el numero de productos de la farmacia
 =======
 	/**

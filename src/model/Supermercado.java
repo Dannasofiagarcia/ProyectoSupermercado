@@ -36,7 +36,7 @@ public class Supermercado implements Serializable {
 	// -----------------------------------------------------------------
 
 	// -----------------------------------------------------------------
-	// Metodos clase cargo (ï¿½rbol n-rio)
+	// Metodos clase cargo (árbol n-rio)
 	// -----------------------------------------------------------------
 
 	/**
@@ -49,7 +49,7 @@ public class Supermercado implements Serializable {
 	}
 
 	// -----------------------------------------------------------------
-	// Metodos clientes farmacia (ï¿½rbol binario)
+	// Metodos clientes farmacia (árbol binario)
 	// -----------------------------------------------------------------
 
 	/**
@@ -57,9 +57,9 @@ public class Supermercado implements Serializable {
 	 * <b>post: </b>El contacto ha sido agregado al directorio.
 	 * 
 	 * @param nom   nombre del contacto - nom != null
-	 * @param tel   telï¿½fono del contacto
-	 * @param dir   direcciï¿½n del contacto
-	 * @param email direcciï¿½n electrï¿½nica del contacto
+	 * @param tel   teléfono del contacto
+	 * @param dir   dirección del contacto
+	 * @param email dirección electrónica del contacto
 	 * @throws ContactoRepetidoException cuando ya existe un contacto con ese nombre
 	 */
 	public void agregarClienteSupermercado(String nombre, String apellido, String codigo, String correo) {
@@ -67,7 +67,7 @@ public class Supermercado implements Serializable {
 		if (clienteRaiz == null)
 			clienteRaiz = c;
 		else {
-			// falta hacer el mÃ©todo
+			// falta hacer el método
 			// clienteRaiz.insertar(c);
 		}
 	}
@@ -97,8 +97,8 @@ public class Supermercado implements Serializable {
 	/**
 	 * Retorna una lista ordenada con los nombres de los contactos
 	 * 
-	 * @return lista de contactos ordenada por orden alfabï¿½tico. Si la lista estï¿½
-	 *         vacï¿½a retorna null
+	 * @return lista de contactos ordenada por orden alfabético. Si la lista está
+	 *         vacía retorna null
 	 */
 	public Collection darListaClientes() {
 		if (clienteRaiz == null)
@@ -111,9 +111,9 @@ public class Supermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna la altura del ï¿½rbol de contactos
+	 * Retorna la altura del árbol de contactos
 	 * 
-	 * @return La altura del ï¿½rbol de contactos
+	 * @return La altura del árbol de contactos
 	 */
 	private int darAltura() {
 		return clienteRaiz == null ? 0 : clienteRaiz.darAltura();
@@ -121,10 +121,10 @@ public class Supermercado implements Serializable {
 
 	/**
 	 * Retorna el menor contacto del directorio, teniendo en cuenta el orden
-	 * alfabï¿½tico de los nombres
+	 * alfabético de los nombres
 	 * 
 	 * @return El contacto con menor nombre del directorio o null si el directorio
-	 *         es vacï¿½o
+	 *         es vacío
 	 */
 	private ClienteSupermercado darMenor() {
 		return clienteRaiz == null ? null : clienteRaiz.darMenor();
@@ -132,35 +132,35 @@ public class Supermercado implements Serializable {
 
 	/**
 	 * Retorna el mayor contacto del directorio, teniendo en cuenta el orden
-	 * alfabï¿½tico de los nombres
+	 * alfabético de los nombres
 	 * 
 	 * @return El contacto con mayor nombre del directorio o null si el directorio
-	 *         es vacï¿½o
+	 *         es vacío
 	 */
 	private ClienteSupermercado darMayor() {
 		return clienteRaiz == null ? null : clienteRaiz.darMayor();
 	}
 
 	/**
-	 * Retorna el nï¿½mero de hojas que tiene el ï¿½rbol de contactos
+	 * Retorna el número de hojas que tiene el árbol de contactos
 	 * 
-	 * @return Nï¿½mero de hojas que tiene el ï¿½rbol de contactos
+	 * @return Número de hojas que tiene el árbol de contactos
 	 */
 	private int contarHojas() {
 		return clienteRaiz == null ? 0 : clienteRaiz.contarHojas();
 	}
 
 	/**
-	 * Verifica que el ï¿½rbol binario estï¿½ ordenado
+	 * Verifica que el árbol binario esté ordenado
 	 */
 	private boolean esOrdenado() {
 		return clienteRaiz == null ? true : clienteRaiz.esOrdenado();
 	}
 
 	/**
-	 * Retorna el nï¿½mero de contactos que estï¿½n en el directorio
+	 * Retorna el número de contactos que están en el directorio
 	 * 
-	 * @return nï¿½mero de contactos presentes en el ï¿½rbol
+	 * @return número de contactos presentes en el árbol
 	 */
 	private int darPeso() {
 		return clienteRaiz == null ? 0 : clienteRaiz.darPeso();
@@ -173,7 +173,7 @@ public class Supermercado implements Serializable {
 	/**
 	 * Retorna una lista con todos los vuelos que hay hacia esta ciudad
 	 * 
-	 * @return Se retornï¿½ la lista de vuelos
+	 * @return Se retornó la lista de vuelos
 	 */
 
 	// -----------------------------------------------------------------

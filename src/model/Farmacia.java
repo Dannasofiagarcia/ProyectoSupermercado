@@ -231,7 +231,7 @@ public class Farmacia {
 		}
 	}
 
-	/ metodo permite obtener el numero de productos de la farmacia
+	/** metodo permite obtener el numero de productos de la farmacia
 	 * 
 	 * @return
 	 */
@@ -240,7 +240,7 @@ public class Farmacia {
 	}
 
 	public void setNumeroDeProductos(int numeroDeProductos) {
-		this.numeroDeProductos = numeroDeProductos;
+		this.numeroDeProductos= numeroDeProductos;
 	}
 
 	/**

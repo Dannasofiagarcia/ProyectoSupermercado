@@ -231,8 +231,16 @@ public class Farmacia {
 		}
 	}
 
+<<<<<<< HEAD
+	/** metodo permite obtener el numero de productos de la farmacia
+=======
 	/**
+<<<<<<< HEAD
 	 * Metodo permite obtener el numero de productos de la farmacia
+=======
+	 * metodo permite obtener el numero de productos de la farmacia
+>>>>>>> 0c0a3d7a3d2ed641a28c4901dd57360e8d6aa01c
+>>>>>>> f88ef97ca2e3932e8b938002392d955628b9f4e6
 	 * 
 	 * @return
 	 */
@@ -246,7 +254,7 @@ public class Farmacia {
 	 * @param numeroDeProductos el nuevo numero de productos
 	 */
 	public void setNumeroDeProductos(int numeroDeProductos) {
-		this.numeroDeProductos = numeroDeProductos;
+		this.numeroDeProductos= numeroDeProductos;
 	}
 
 	/**

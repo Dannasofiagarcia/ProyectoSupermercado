@@ -1,6 +1,5 @@
 package application;
 
-<<<<<<< HEAD
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,18 +11,14 @@ import java.text.ParseException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-<<<<<<< HEAD
-=======
 import exception.ClientesSupermercadoException;
 import exception.ProductoSupermercadoException;
 import javafx.collections.FXCollections;
-=======
 import java.io.IOException;
 import java.time.LocalTime;
 
 import exception.ClientesSupermercadoException;
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,16 +26,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-<<<<<<< HEAD
 import javafx.scene.canvas.GraphicsContext;
-=======
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-<<<<<<< HEAD
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -53,7 +45,6 @@ import model.ClienteSupermercado;
 import model.ProductoSupermercado;
 import model.PromocionSupermercado;
 import model.Supermercado;
-=======
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -62,7 +53,6 @@ import javafx.stage.Stage;
 import model.ProductoSupermercado;
 import model.Supermercado;
 //import threads.TiempoThread;
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
 
 public class ControllerSupermercado {
 
@@ -257,21 +247,14 @@ public class ControllerSupermercado {
 		tiempoActual = LocalTime.now();
 		supermercado = new Supermercado("Supermercado");
 
-<<<<<<< HEAD
-=======
-		// supermercado.cargarProductos(".\\data\\ProductosSupermercado.txt");
-
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
 		paneTabla.setVisible(true);
 		paneEliminar.setVisible(false);
 		paneBuscar.setVisible(false);
 		// paneTabla.getChildren().add(tablaProductos);
 		// tablaProductos.setPrefSize(347, 200);
 		paneTabla.setVisible(true);
-<<<<<<< HEAD
 		configurarCanvas();
-=======
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
+
 	}
 
 	@FXML
@@ -301,7 +284,6 @@ public class ControllerSupermercado {
 
 	@FXML
 	void registrarCliente(ActionEvent e) {
-<<<<<<< HEAD
 
 	}
 
@@ -378,7 +360,6 @@ public class ControllerSupermercado {
 			gc.drawImage(image, 0, 0);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-=======
 		paneEliminarCliente.setVisible(false);
 		paneMostrarInformacionCliente.setVisible(false);
 		paneRegistrarCliente.setVisible(true);
@@ -399,14 +380,12 @@ public class ControllerSupermercado {
 		String codigoCliente = codigoClienteAgregar.getText();
 		String correoCliente = correoClienteAgregar.getText();
 
-<<<<<<< HEAD
 		supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
 		Alert dialogo = new Alert(AlertType.INFORMATION);
 		dialogo.setTitle("Agregar cliente");
 		dialogo.setHeaderText("Se ha agregado con exito al cliente " + nombreCliente + " con codigo " + codigoCliente);
 		dialogo.show();
 
-=======
 		try {
 			supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
 			Alert dialogo = new Alert(AlertType.INFORMATION);
@@ -419,13 +398,10 @@ public class ControllerSupermercado {
 			dialogo.setTitle("Agregar cliente");
 			dialogo.setHeaderText(e.getMessage());
 			dialogo.show();
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
 		}
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Modifica la ubicacion
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el m�todo en la ventana
@@ -459,16 +435,14 @@ public class ControllerSupermercado {
 	}
 
 	/**
-	 * Modifica el precio
-=======
-	 * Elimina un cliente
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
+	 * Modifica el precio ======= Elimina un cliente >>>>>>>
+	 * 378bf6232147068a01892b3d89d03f21d5a95279
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el m�todo en la ventana
 	 */
 
 	@FXML
-<<<<<<< HEAD
+
 	void modificarPrecio(ActionEvent e) {
 
 	}
@@ -497,7 +471,8 @@ public class ControllerSupermercado {
 
 	@FXML
 	void cargarBoton(ActionEvent e) {
-=======
+	}
+
 	void eliminarClienteBoton(ActionEvent e) {
 		paneRegistrarCliente.setVisible(false);
 		paneMostrarInformacionCliente.setVisible(false);
@@ -520,22 +495,17 @@ public class ControllerSupermercado {
 		informacionE.setTitle("Eliminar cliente");
 		informacionE.setHeaderText("Cliente eliminado con �xito");
 		informacionE.show();
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
 
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Ver empleados
-=======
-	 * Busca un cliente
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
+	 * <<<<<<< HEAD Ver empleados ======= Busca un cliente >>>>>>>
+	 * 378bf6232147068a01892b3d89d03f21d5a95279
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el m�todo en la ventana
 	 */
 
 	@FXML
-<<<<<<< HEAD
 	void verEmpleados(ActionEvent event) {
 
 	}
@@ -544,7 +514,7 @@ public class ControllerSupermercado {
 	public void buscarPromociones() {
 
 	}
-=======
+
 	void buscarCliente(ActionEvent e) {
 		paneEliminarCliente.setVisible(false);
 		paneRegistrarCliente.setVisible(false);
@@ -553,5 +523,4 @@ public class ControllerSupermercado {
 
 	}
 
->>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
 }

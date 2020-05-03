@@ -3,7 +3,6 @@ package application;
 import java.io.IOException;
 import java.time.LocalTime;
 
-import exception.ClientesSupermercadoException;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,8 +25,6 @@ import model.Supermercado;
 //import threads.TiempoThread;
 
 public class ControllerSupermercado {
-
-	static final long serialVersionUID = 42L;
 
 	private Stage stage;
 
@@ -225,8 +222,8 @@ public class ControllerSupermercado {
 		paneTabla.setVisible(true);
 		paneEliminar.setVisible(false);
 		paneBuscar.setVisible(false);
-		paneTabla.getChildren().add(tablaProductos);
-		tablaProductos.setPrefSize(347, 200);
+		// paneTabla.getChildren().add(tablaProductos);
+		// tablaProductos.setPrefSize(347, 200);
 		paneTabla.setVisible(true);
 	}
 
@@ -277,25 +274,18 @@ public class ControllerSupermercado {
 		String codigoCliente = codigoClienteAgregar.getText();
 		String correoCliente = correoClienteAgregar.getText();
 
-		try {
-			supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
-			Alert dialogo = new Alert(AlertType.INFORMATION);
-			dialogo.setTitle("Agregar cliente");
-			dialogo.setHeaderText(
-					"Se ha agregado con �xito al cliente " + nombreCliente + " con c�digo " + codigoCliente);
-			dialogo.show();
-		} catch (ClientesSupermercadoException e) {
-			Alert dialogo = new Alert(AlertType.ERROR);
-			dialogo.setTitle("Agregar cliente");
-			dialogo.setHeaderText(e.getMessage());
-			dialogo.show();
-		}
+		supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
+		Alert dialogo = new Alert(AlertType.INFORMATION);
+		dialogo.setTitle("Agregar cliente");
+		dialogo.setHeaderText("Se ha agregado con exito al cliente " + nombreCliente + " con codigo " + codigoCliente);
+		dialogo.show();
+
 	}
 
 	/**
 	 * Elimina un cliente
 	 * 
-	 * @param ActionEvent e Es la accion que realiza el m�todo en la ventana
+	 * @param ActionEvent e Es la accion que realiza el metodo en la ventana
 	 */
 
 	@FXML

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,44 +10,42 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FarmaciaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FarmaciaController">
    <children>
       <ImageView fitHeight="280.0" fitWidth="591.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../cualidades-tecnico-farmacia.jpg" />
          </image>
       </ImageView>
-      <BorderPane fx:id="borderPane" layoutX="-2.0" layoutY="-1.0" prefHeight="400.0" prefWidth="400.0">
+      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="400.0" prefWidth="400.0">
          <bottom>
             <Pane prefHeight="403.0" prefWidth="588.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="102.0" layoutY="339.0" mnemonicParsing="false" onAction="#verInventario" text="VER INVENTARIO" />
-                  <Button layoutX="48.0" layoutY="301.0" mnemonicParsing="false" onAction="#verInformacionDeLosClientes" text="VER INFORMACIÓN DE LOS CLIENTES" />
                   <Label layoutX="38.0" layoutY="200.0" prefHeight="72.0" prefWidth="530.0" text="BIENVENIDO A LA FARMACIA">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="36.0" />
                      </font>
                   </Label>
-                  <Circle fx:id="cara" fill="WHITE" layoutX="303.0" layoutY="108.0" onMouseClicked="#cambiarColor" radius="81.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="ojo1" fill="WHITE" layoutX="275.0" layoutY="85.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="ojo2" fill="WHITE" layoutX="330.0" layoutY="85.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Arc fx:id="boca" fill="WHITE" layoutX="303.0" layoutY="116.0" length="180.0" radiusX="47.0" radiusY="41.0" startAngle="180.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
-                  <Circle fx:id="pupila1" fill="#0a0a0a" layoutX="275.0" layoutY="85.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="pupila2" layoutX="330.0" layoutY="85.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Rectangle fx:id="caja" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="103.0" layoutX="38.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
-                  <Rectangle fx:id="cruz2" arcHeight="5.0" arcWidth="5.0" fill="#ff2020" height="17.0" layoutX="77.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="83.0" />
-                  <Rectangle fx:id="cruz1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="17.0" layoutX="77.0" layoutY="138.0" rotate="-90.0" stroke="BLACK" strokeType="INSIDE" width="83.0" />
-                  <Circle fx:id="dec1" fill="DODGERBLUE" layoutX="26.0" layoutY="27.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="dec3" fill="DODGERBLUE" layoutX="26.0" layoutY="376.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="WHITE" layoutX="303.0" layoutY="108.0" />
+                  <Circle fill="WHITE" layoutX="275.0" layoutY="85.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="WHITE" layoutX="330.0" layoutY="85.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Arc fill="WHITE" layoutX="303.0" layoutY="116.0" length="180.0" radiusX="47.0" radiusY="41.0" startAngle="180.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+                  <Circle fill="#0a0a0a" layoutX="275.0" layoutY="85.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle layoutX="330.0" layoutY="85.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="103.0" layoutX="38.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2020" height="17.0" layoutX="77.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="83.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="17.0" layoutX="77.0" layoutY="138.0" rotate="-90.0" stroke="BLACK" strokeType="INSIDE" width="83.0" />
+                  <Circle fill="DODGERBLUE" layoutX="26.0" layoutY="27.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="DODGERBLUE" layoutX="26.0" layoutY="376.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </Pane>
          </bottom>
       </BorderPane>
-      <Rectangle fx:id="rectangulo" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="377.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
-      <Label fx:id="lblRectangulo" layoutX="398.0" layoutY="38.0" prefHeight="17.0" prefWidth="160.0" text="Touch me!" />
-      <Circle fx:id="dec2" fill="DODGERBLUE" layoutX="572.0" layoutY="28.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="dec4" fill="DODGERBLUE" layoutX="572.0" layoutY="374.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="clock" layoutX="424.0" layoutY="306.0" prefHeight="68.0" prefWidth="160.0" text="00:00:00">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="377.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
+      <Label layoutX="398.0" layoutY="38.0" prefHeight="17.0" prefWidth="160.0" text="Touch me!" />
+      <Circle fill="DODGERBLUE" layoutX="572.0" layoutY="28.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="572.0" layoutY="374.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="424.0" layoutY="306.0" prefHeight="68.0" prefWidth="160.0" text="00:00:00">
          <font>
             <Font name="Arial Rounded MT Bold" size="24.0" />
          </font>

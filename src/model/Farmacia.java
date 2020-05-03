@@ -231,6 +231,12 @@ public class Farmacia {
 		}
 	}
 
+<<<<<<< HEAD
+
+	/** metodo permite obtener el numero de productos de la farmacia
+=======
+=======
+>>>>>>> 378bf6232147068a01892b3d89d03f21d5a95279
 	/**
 	 * Metodo permite obtener el numero de productos de la farmacia
 	 * 

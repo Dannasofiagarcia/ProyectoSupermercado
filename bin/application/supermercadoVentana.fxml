@@ -15,13 +15,8 @@
          <children>
             <Canvas fx:id="canvasLogo" height="90.0" layoutX="34.0" layoutY="11.0" width="96.0" />
             <Separator layoutX="-10.0" layoutY="109.0" prefHeight="10.0" prefWidth="579.0" />
-<<<<<<< HEAD
-            <Button layoutX="456.0" layoutY="143.0" mnemonicParsing="false"  text="Cargar" />
-            <Button layoutX="371.0" layoutY="142.0" mnemonicParsing="false"  text="Exportar" />
-=======
             <Button layoutX="456.0" layoutY="143.0" mnemonicParsing="false" onAction="#cargarBoton" text="Cargar" />
             <Button layoutX="371.0" layoutY="142.0" mnemonicParsing="false" onAction="#exportar" text="Exportar" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <Label layoutX="160.0" layoutY="15.0" prefHeight="74.0" prefWidth="389.0" text="SUPERMERCADO" textFill="#ff903c">
                <font>
                   <Font name="System Bold" size="47.0" />
@@ -29,11 +24,7 @@
             </Label>
             <Button layoutX="376.0" layoutY="200.0" mnemonicParsing="false" onAction="#registrarCliente" prefHeight="25.0" prefWidth="123.0" text="Registrar cliente" />
             <Button layoutX="376.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarClienteBoton" prefHeight="25.0" prefWidth="123.0" text="Eliminar cliente" />
-<<<<<<< HEAD
-            <Button layoutX="435.0" layoutY="354.0" mnemonicParsing="false"  text="Insertar producto" />
-=======
             <Button layoutX="435.0" layoutY="354.0" mnemonicParsing="false" onAction="#agregarProducto" text="Insertar producto" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <Button fx:id="buscarCliente" layoutX="376.0" layoutY="293.0" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="25.0" prefWidth="123.0" text="Buscar cliente" />
             <Separator layoutX="-4.0" layoutY="341.0" prefHeight="10.0" prefWidth="569.0" />
             <Separator layoutY="593.0" prefHeight="10.0" prefWidth="569.0" />
@@ -43,26 +34,16 @@
                </font>
             </Label>
             <Button layoutX="5.0" layoutY="603.0" mnemonicParsing="false" onAction="#abrirFarmacia" text="Cambiar a farmacia" />
-<<<<<<< HEAD
-            <Button layoutX="434.0" layoutY="388.0" mnemonicParsing="false"  text="Eliminar producto" />
-            <Button layoutX="439.0" layoutY="423.0" mnemonicParsing="false"  text="Buscar producto" />
-            <Button fx:id="modificarCodigo" layoutX="438.0" layoutY="493.0" mnemonicParsing="false"  text="Modificar código" />
-=======
             <Button layoutX="434.0" layoutY="388.0" mnemonicParsing="false" onAction="#eliminarProducto" text="Eliminar producto" />
             <Button layoutX="439.0" layoutY="423.0" mnemonicParsing="false" onAction="#buscarProducto" text="Buscar producto" />
             <Button fx:id="modificarCodigo" layoutX="438.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificarCodigo" text="Modificar código" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <TextField fx:id="rutaDatos" layoutX="26.0" layoutY="143.0" prefHeight="25.0" prefWidth="318.0" />
             <Label layoutX="48.0" layoutY="116.0" text="Cargar la información de los clientes">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-<<<<<<< HEAD
-            <Button layoutX="129.0" layoutY="603.0" mnemonicParsing="false"  text="Ver empleados" />
-=======
             <Button layoutX="129.0" layoutY="603.0" mnemonicParsing="false" onAction="#verEmpleados" text="Ver empleados" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <Separator layoutX="24.0" layoutY="181.0" prefHeight="10.0" prefWidth="330.0" />
             <Separator layoutX="24.0" layoutY="326.0" prefHeight="10.0" prefWidth="330.0" />
             <Separator layoutX="22.0" layoutY="184.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="5.0" />
@@ -149,11 +130,7 @@
                   <Button fx:id="eliminarCliente" layoutX="130.0" layoutY="73.0" mnemonicParsing="false" text="Eliminar" />
                </children>
             </Pane>
-<<<<<<< HEAD
-            <Button fx:id="guardar" layoutX="231.0" layoutY="603.0" mnemonicParsing="false"  text="Guardar" />
-=======
             <Button fx:id="guardar" layoutX="231.0" layoutY="603.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <Pane fx:id="paneBuscarCliente" layoutX="29.0" layoutY="189.0" prefHeight="137.0" prefWidth="318.0" visible="false">
                <children>
                   <Label layoutX="85.0" layoutY="9.0" text="Ingrese el código del cliente" />
@@ -170,15 +147,9 @@
                   <TextField fx:id="codigoProductoNuevo" layoutX="52.0" layoutY="116.0" prefHeight="25.0" prefWidth="255.0" />
                </children>
             </Pane>
-<<<<<<< HEAD
-            <Button fx:id="modificarNombre" layoutX="436.0" layoutY="457.0" mnemonicParsing="false"  text="Modificar nombre" />
-            <Button fx:id="modificarPrecio" layoutX="440.0" layoutY="529.0" mnemonicParsing="false"  text="Modificar precio" />
-            <Button fx:id="modificarUbicacion" layoutX="431.0" layoutY="564.0" mnemonicParsing="false"  text="Modificar ubicación" />
-=======
             <Button fx:id="modificarNombre" layoutX="436.0" layoutY="457.0" mnemonicParsing="false" onAction="#modificarNombre" text="Modificar nombre" />
             <Button fx:id="modificarPrecio" layoutX="440.0" layoutY="529.0" mnemonicParsing="false" onAction="#modificarPrecio" text="Modificar precio" />
             <Button fx:id="modificarUbicacion" layoutX="431.0" layoutY="564.0" mnemonicParsing="false" onAction="#modificarUbicacion" text="Modificar ubicación" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <Pane fx:id="paneModificarNombreProducto" layoutX="49.0" layoutY="378.0" prefHeight="200.0" prefWidth="347.0" visible="false">
                <children>
                   <Label layoutX="83.0" layoutY="25.0" prefHeight="17.0" prefWidth="168.0" text="Ingrese el código del producto" />
@@ -206,11 +177,7 @@
                   <TextField fx:id="ubicacionProductoNuevo" layoutX="52.0" layoutY="116.0" prefHeight="25.0" prefWidth="255.0" />
                </children>
             </Pane>
-<<<<<<< HEAD
-            <Button fx:id="buscarPromociones" layoutX="437.0" layoutY="602.0" mnemonicParsing="false"  text="Buscar promociones" />
-=======
             <Button fx:id="buscarPromociones" layoutX="437.0" layoutY="602.0" mnemonicParsing="false" onAction="#buscarPromociones" text="Buscar promociones" />
->>>>>>> 878eb32ab6c687229b9ad1fa1953e0b476ad3c58
             <TextField fx:id="campoCodigoPromocion" layoutX="308.0" layoutY="602.0" prefHeight="25.0" prefWidth="123.0" promptText="Ingrese el código" />
          </children>
       </Pane>

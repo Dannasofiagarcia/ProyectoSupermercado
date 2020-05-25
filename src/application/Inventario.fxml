@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventarioController">
+   <top>
+      <VBox prefHeight="87.0" prefWidth="800.0" styleClass="root" stylesheets="@../CSS/mycss.css" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane fx:id="gridPane" prefHeight="105.0" prefWidth="800.0" style="-fx-background-color: f9dca7;">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="160.0" minWidth="9.0" prefWidth="148.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="156.0" minWidth="5.0" prefWidth="50.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="192.0" minWidth="69.0" prefWidth="121.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="192.0" minWidth="8.0" prefWidth="23.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="263.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="0.0" prefWidth="6.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="10.0" prefWidth="171.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="0.0" prefWidth="0.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="31.0" minHeight="5.0" prefHeight="23.95490264892578" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="33.04509735107422" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="129.0" text="Número de Productos" textOverrun="CLIP" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numeroDeProductos" prefHeight="25.0" prefWidth="122.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="buscar" alignment="CENTER" prefHeight="25.0" prefWidth="127.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#generarInventario" prefHeight="21.0" prefWidth="79.0" text="Generar" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="clock" alignment="CENTER" prefHeight="37.0" prefWidth="151.0" text="12:42:00" translateX="5.0" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Line endX="99.99952697753906" endY="5.404449462890625" startX="99.99960327148438" startY="-82.88844299316406" stroke="#0000007a" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Line endX="99.99952697753906" endY="5.404449462890625" startX="99.99960327148438" startY="-82.88844299316406" stroke="#0000007a" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Line endX="99.99952697753906" endY="5.404449462890625" startX="99.99960327148438" startY="-82.88844299316406" stroke="#0000007a" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="ORDENAR POR" textAlignment="CENTER" translateX="70.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="CoolveticaRg-Regular" size="22.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#ordenarPorFechaDeLlegada" prefHeight="29.0" prefWidth="88.0" text="F. de Llegada" translateX="10.0" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#ordenarPorTiempoDeLlegada" prefHeight="29.0" prefWidth="64.0" text="Tiempo" translateX="100.0" GridPane.columnIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#ordenarPorMarca" prefHeight="29.0" prefWidth="65.0" text="Marca" translateX="180.0" GridPane.columnIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#ordenarPorCodigo" prefHeight="29.0" prefWidth="66.0" text="Código" translateX="10.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#ordenarPorNombreDelProducto" prefHeight="29.0" prefWidth="73.0" text="Nombre" translateX="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#ordenarPorTipo" prefHeight="30.0" prefWidth="64.0" text="Tipo" translateX="185.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#buscarProducto" text="Buscar" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="opcionesDeBusqueda" prefHeight="27.0" prefWidth="127.0" promptText="Buscar por:" translateX="15.0" GridPane.columnIndex="6" />
+                  <Label fx:id="tiempo" text="Time:" translateX="90.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Consolas Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <Pagination fx:id="paginas" maxPageIndicatorCount="5" prefHeight="438.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

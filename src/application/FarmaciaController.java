@@ -10,23 +10,56 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.AudioClip;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Arc;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modelo.Farmacia;
-import threads.BarThread;
+import threads.CaritaThread;
+import threads.MusicThread;
 import threads.TiempoActualFarmaciaThread;
 
 public class FarmaciaController {
+	@FXML
+	private Circle pupila1;
 
 	@FXML
-	private Rectangle carga;
+	private Circle pupila2;
 
 	@FXML
-	private Rectangle barraFondo;
+	private Circle cara;
+	@FXML
+	private Circle ojo1;
+	@FXML
+	private Circle ojo2;
+	@FXML
+	private Arc boca;
+
+	@FXML
+	private Circle dec1;
+
+	@FXML
+	private Circle dec3;
+	@FXML
+	private Circle dec2;
+
+	@FXML
+	private Circle dec4;
+
+	@FXML
+	private Rectangle caja;
+
+	@FXML
+	private Rectangle cruz2;
+
+	@FXML
+	private Rectangle cruz1;
 	@FXML
 	private Label lblRectangulo;
 	@FXML
@@ -44,40 +77,24 @@ public class FarmaciaController {
 	}
 
 	@FXML
-	private Pane pane;
+	void cambiarColor(MouseEvent event) {
+		CaritaThread ct = new CaritaThread(this);
+		ct.start();
+
+	}
 
 	@FXML
-	private Pane paneOpciones;
+	private Pane pane;
 
 	@FXML
 	private BorderPane borderPane;
 
-	@FXML
-	private Label cargando;
-
-	@FXML
-	private Label paciencia;
-
 	private Farmacia farmacia;
 	private AudioClip audio;
-	private BarThread barThread;
 
 	public void cambiarTiempo() {
 		tiempoActual = tiempoActual.plusSeconds(1);
 		clock.setText(DateTimeFormatter.ofPattern("hh:mm:ss a").format(tiempoActual));
-	}
-
-	@FXML
-	public void updateBar() {
-		carga.setWidth(carga.getWidth() + 1);
-		if (carga.getWidth() == 490) {
-			barThread.desactivate();
-			cargando.setVisible(false);
-			paciencia.setVisible(false);
-			barraFondo.setVisible(false);
-			carga.setVisible(false);
-			paneOpciones.setVisible(true);
-		}
 	}
 
 	@FXML
@@ -87,10 +104,58 @@ public class FarmaciaController {
 		cambiarTiempo();
 		taf = new TiempoActualFarmaciaThread(this);
 		taf.start();
-		paneOpciones.setVisible(false);
-		barThread = new BarThread(this);
-		barThread.start();
+		MusicThread mt = new MusicThread(this);
+		mt.start();
 
+	}
+
+	public void colorearVerde() {
+		cara.setFill(Color.GREENYELLOW);
+		ojo1.setFill(Color.WHITE);
+		ojo2.setFill(Color.WHITE);
+		boca.setFill(Color.CORAL);
+		pupila1.setFill(Color.BLACK);
+		pupila2.setFill(Color.BLACK);
+		caja.setFill(Color.LIGHTPINK);
+		cruz1.setFill(Color.MEDIUMTURQUOISE);
+		cruz2.setFill(Color.MEDIUMTURQUOISE);
+		dec1.setFill(Color.MEDIUMSPRINGGREEN);
+		dec2.setFill(Color.MEDIUMSPRINGGREEN);
+		dec3.setFill(Color.MEDIUMSPRINGGREEN);
+		dec4.setFill(Color.MEDIUMSPRINGGREEN);
+
+	}
+
+	public void colorearVioleta() {
+		cara.setFill(Color.BLUEVIOLET);
+		ojo1.setFill(Color.WHITE);
+		ojo2.setFill(Color.WHITE);
+		pupila1.setFill(Color.BLACK);
+		pupila2.setFill(Color.BLACK);
+		boca.setFill(Color.YELLOW);
+		caja.setFill(Color.PALEGREEN);
+		cruz1.setFill(Color.YELLOW);
+		cruz2.setFill(Color.YELLOW);
+		dec1.setFill(Color.LIGHTSALMON);
+		dec2.setFill(Color.LIGHTSALMON);
+		dec3.setFill(Color.LIGHTSALMON);
+		dec4.setFill(Color.LIGHTSALMON);
+	}
+
+	public void colorearAmarillo() {
+		cara.setFill(Color.YELLOW);
+		pupila1.setFill(Color.BLACK);
+		pupila2.setFill(Color.BLACK);
+		ojo1.setFill(Color.WHITE);
+		ojo2.setFill(Color.WHITE);
+		boca.setFill(Color.BLUEVIOLET);
+		caja.setFill(Color.ORANGE);
+		cruz1.setFill(Color.LIGHTCORAL);
+		cruz2.setFill(Color.LIGHTCORAL);
+		dec1.setFill(Color.STEELBLUE);
+		dec2.setFill(Color.STEELBLUE);
+		dec3.setFill(Color.STEELBLUE);
+		dec4.setFill(Color.STEELBLUE);
 	}
 
 	public void playMusic() {

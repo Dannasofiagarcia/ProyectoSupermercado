@@ -15,6 +15,7 @@ public class TiempoThread extends Thread {
 
 	}
 
+	@Override
 	public void run() {
 		while (active) {
 			Platform.runLater(new Runnable() {

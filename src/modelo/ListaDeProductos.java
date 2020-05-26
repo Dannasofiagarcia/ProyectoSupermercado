@@ -5,27 +5,28 @@ public class ListaDeProductos {
 	private int id;
 	private ListaDeProductos siguiente;
 	private ListaDeProductos anterior;
-	
-	public ListaDeProductos(String nombre,int id) {
+
+	public ListaDeProductos(String nombre, int id) {
 		this.nombre = nombre;
-		this.id= id;
+		this.id = id;
 	}
 
 	/**
 	 * este metodo permite obtener el nombre de la lsita de productos
+	 * 
 	 * @return
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
-	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	/**
 	 * este metodo permite obtener el id de la lista de productos
+	 * 
 	 * @return
 	 */
 	public int getId() {
@@ -38,6 +39,7 @@ public class ListaDeProductos {
 
 	/**
 	 * este metodo permite obtener el siguiente elemento de la lista de productos
+	 * 
 	 * @return el siguiente elemento de la lista
 	 */
 	public ListaDeProductos getSiguiente() {
@@ -50,6 +52,7 @@ public class ListaDeProductos {
 
 	/**
 	 * este metodo permite obtener el anterior elemento de la lista de productos
+	 * 
 	 * @return el anterior elemento de la lista
 	 */
 	public ListaDeProductos getAnterior() {
@@ -59,5 +62,5 @@ public class ListaDeProductos {
 	public void setAnterior(ListaDeProductos anterior) {
 		this.anterior = anterior;
 	}
-	
+
 }

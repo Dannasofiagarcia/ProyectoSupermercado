@@ -139,7 +139,7 @@ public class ControllerClientes {
 			supermercado.contratarPersona(nombre, codigo, turno, cargo);
 			Alert parseE = new Alert(AlertType.INFORMATION);
 			parseE.setTitle("Contratar persona");
-			parseE.setHeaderText(nombre + " ha sido contratada con éxito");
+			parseE.setHeaderText(nombre + " ha sido contratada con ï¿½xito");
 			parseE.show();
 		} catch (CargoSupermercadoException e) {
 			Alert parseE = new Alert(AlertType.ERROR);
@@ -198,7 +198,7 @@ public class ControllerClientes {
 			supermercado.despedirEmpleado(codigo);
 			Alert parseE = new Alert(AlertType.INFORMATION);
 			parseE.setTitle("Despedir empleado");
-			parseE.setHeaderText("El empleado fue despedido con éxito");
+			parseE.setHeaderText("El empleado fue despedido con ï¿½xito");
 			parseE.show();
 		} catch (CargoSupermercadoException e) {
 			Alert parseE = new Alert(AlertType.ERROR);
@@ -227,7 +227,7 @@ public class ControllerClientes {
 			supermercado.crearCargo(nombre, jefe);
 			Alert parseE = new Alert(AlertType.INFORMATION);
 			parseE.setTitle("Crear cargo");
-			parseE.setHeaderText("El cargo fue creado con éxito");
+			parseE.setHeaderText("El cargo fue creado con ï¿½xito");
 			parseE.show();
 		} catch (CargoSupermercadoException e) {
 			Alert parseE = new Alert(AlertType.ERROR);
@@ -255,7 +255,7 @@ public class ControllerClientes {
 			supermercado.eliminarCargo(nombre);
 			Alert parseE = new Alert(AlertType.INFORMATION);
 			parseE.setTitle("Eliminar cargo");
-			parseE.setHeaderText("El cargo fue eliminado con éxito");
+			parseE.setHeaderText("El cargo fue eliminado con ï¿½xito");
 			parseE.show();
 		} catch (CargoSupermercadoException e) {
 			Alert parseE = new Alert(AlertType.ERROR);
@@ -278,14 +278,14 @@ public class ControllerClientes {
 				archivo.createNewFile();
 			}
 			Alert excepcion1 = new Alert(AlertType.INFORMATION);
-			excepcion1.setTitle("Guardar información");
-			excepcion1.setHeaderText("Información guardada con exito en el archivo");
+			excepcion1.setTitle("Guardar informaciï¿½n");
+			excepcion1.setHeaderText("Informaciï¿½n guardada con exito en el archivo");
 			excepcion1.show();
 
 		} catch (FileNotFoundException e) {
 			Alert excepcion2 = new Alert(AlertType.ERROR);
 			excepcion2.setTitle("Archivo no encontrado");
-			excepcion2.setHeaderText("No fue posible guardar la información, el archivo no fue encontrado");
+			excepcion2.setHeaderText("No fue posible guardar la informaciï¿½n, el archivo no fue encontrado");
 			excepcion2.show();
 		} catch (IOException e) {
 			Alert excepcion3 = new Alert(AlertType.ERROR);

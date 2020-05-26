@@ -5,8 +5,8 @@ import java.util.Comparator;
 public class TiempoComparator implements Comparator<Producto> {
 
 	/**
-	 * Este método permite comparar dos productos a partir del horario 
-	 * de llegada de cada uno a la farmacia
+	 * Este método permite comparar dos productos a partir del horario de llegada de
+	 * cada uno a la farmacia
 	 */
 	@Override
 	public int compare(Producto p1, Producto p2) {

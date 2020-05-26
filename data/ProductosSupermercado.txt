@@ -1,5 +1,4 @@
 Leche deslactosada,0000,5000.0,Pasillo 3
-Manzana,0000000000,5000.0,Pasillo 5
 Zanahoria,0201,900.0,Pasillo 1
 Papa amarilla,0232,600.0,Pasillo 1
 Papa,0291,900.0,Pasillo 1

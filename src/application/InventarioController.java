@@ -282,18 +282,8 @@ public class InventarioController {
 	}
 
 	public void cambiarTiempo() {
-		boolean mover = true;
-
-		if (segundos() == 60) {
-			mover = false;
-		}
-
-		if (mover == true) {
-			tiempoActual = tiempoActual.plusSeconds(2);
-			clock.setText(DateTimeFormatter.ofPattern("hh:mm:ss a").format(tiempoActual));
-		} else {
-			clock.setText(DateTimeFormatter.ofPattern("hh:mm:ss a").format(tiempoActual));
-		}
+		tiempoActual = tiempoActual.plusSeconds(1);
+		clock.setText(DateTimeFormatter.ofPattern("hh:mm:ss a").format(tiempoActual));
 	}
 
 	public void initialize() {
@@ -303,14 +293,8 @@ public class InventarioController {
 		tat.start();
 		opcionesDeBusqueda.getItems().addAll("Fecha de llegada", "Horario", "Nombre de la marca", "Codigo del producto",
 				"Nombre del producto", "Tipo");
-	}
-
-	public int segundos() {
-		int contador = 0;
-		int segundos = 0;
-		segundos = tiempoActual.getSecond();
-		contador = segundos + contador;
-		return contador;
+		borderPane.setStyle("-fx-background-color: #acdfe8;");
+		gridPane.setStyle("-fx-background-color: #d1e697;");
 	}
 
 }

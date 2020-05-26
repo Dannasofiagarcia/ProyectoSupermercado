@@ -1,5 +1,0 @@
-Leche de chocolate,0001,5000.0,Pasillo 3
-Leche de almendras,0002,5000.0,Pasillo 3
-Leche de cabra,0003,5000.0,Pasillo 3
-Leche entera,0004,5000.0,Pasillo 3
-

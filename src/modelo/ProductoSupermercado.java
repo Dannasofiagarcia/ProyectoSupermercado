@@ -41,8 +41,8 @@ public class ProductoSupermercado implements Serializable {
 	// -----------------------------------------------------------------
 
 	/**
-	 * Inserta el vuelo después del actual. <br>
-	 * <b>post: </b> Se insertó el vuelo especificado después del vuelo actual. <br>
+	 * Inserta el vuelo despuï¿½s del actual. <br>
+	 * <b>post: </b> Se insertï¿½ el vuelo especificado despuï¿½s del vuelo actual. <br>
 	 * 
 	 * @param vuelo El vuelo a insertar - vuelo!=null
 	 */
@@ -56,7 +56,7 @@ public class ProductoSupermercado implements Serializable {
 
 	/**
 	 * Inserta el vuelo antes del actual. <br>
-	 * <b>post: </b> Se insertó el vuelo especificado antes del vuelo actual. <br>
+	 * <b>post: </b> Se insertï¿½ el vuelo especificado antes del vuelo actual. <br>
 	 * 
 	 * @param vuelo El vuelo a insertar - vuelo!=null
 	 */

@@ -128,7 +128,7 @@ public class ClienteFarmaciaController {
 			Alert score = new Alert(AlertType.ERROR);
 			score.setTitle("CLIENTES DE LA FARMACIA");
 			score.initStyle(StageStyle.DECORATED);
-			score.setContentText("Por favor introduzca un código");
+			score.setContentText("Por favor introduzca un numero");
 			score.show();
 		} catch (NullPointerException npe) {
 			Alert score = new Alert(AlertType.ERROR);

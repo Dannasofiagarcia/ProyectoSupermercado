@@ -36,7 +36,7 @@ public class CargoSupermercado implements Serializable {
 	}
 
 	// -----------------------------------------------------------------
-	// Métodos
+	// Mï¿½todos
 	// -----------------------------------------------------------------
 
 	/**
@@ -60,7 +60,7 @@ public class CargoSupermercado implements Serializable {
 	/**
 	 * Indica si el cargo se encuentra vacante
 	 * 
-	 * @return true si el cargo está vacante o false en caso contrario
+	 * @return true si el cargo estï¿½ vacante o false en caso contrario
 	 */
 	public boolean estaVacante() {
 		return asignado == null;
@@ -91,7 +91,7 @@ public class CargoSupermercado implements Serializable {
 	 * Elimina el cargo con el nombre dado
 	 * 
 	 * @param nCargo El nombre del cargo a eliminar
-	 * @throws OrganigramaException Si el cargo no es una hoja o no está vacante
+	 * @throws OrganigramaException Si el cargo no es una hoja o no estï¿½ vacante
 	 */
 	public void eliminarCargo(String nCargo) {
 		for (int i = 0; i < subalternos.size(); i++) {
@@ -110,7 +110,7 @@ public class CargoSupermercado implements Serializable {
 	/**
 	 * Asigna la persona con los datos especificados al cargo actual
 	 * 
-	 * @param idPersona El código de la persona
+	 * @param idPersona El cï¿½digo de la persona
 	 * @param nombre    El nombre de la persona
 	 * @param ingreso   La fecha de ingreso
 	 * @throws OrganigramaException Si el cargo ya se encuentra ocupado
@@ -139,10 +139,10 @@ public class CargoSupermercado implements Serializable {
 	}
 
 	/**
-	 * Cuenta el número de hojas que hay en el organigrama que comienza con este
+	 * Cuenta el nï¿½mero de hojas que hay en el organigrama que comienza con este
 	 * elemento
 	 * 
-	 * @return El número de hojas
+	 * @return El nï¿½mero de hojas
 	 */
 	public int contarHojas() {
 		if (esHoja())
@@ -158,9 +158,9 @@ public class CargoSupermercado implements Serializable {
 	}
 
 	/**
-	 * Calcula el peso del organigrama del que este elemento es raíz
+	 * Calcula el peso del organigrama del que este elemento es raï¿½z
 	 * 
-	 * @return peso o número de nodos
+	 * @return peso o nï¿½mero de nodos
 	 */
 	public int darPeso() {
 		if (esHoja())
@@ -176,9 +176,9 @@ public class CargoSupermercado implements Serializable {
 	}
 
 	/**
-	 * Calcula la altura del organigrama del que este elemento es raíz
+	 * Calcula la altura del organigrama del que este elemento es raï¿½z
 	 * 
-	 * @return altura del árbol. altura >= 1
+	 * @return altura del ï¿½rbol. altura >= 1
 	 */
 	public int darAltura() {
 		if (esHoja())
@@ -196,12 +196,12 @@ public class CargoSupermercado implements Serializable {
 	}
 
 	/**
-	 * Agrega a la lista que recibe como parámetro los nombres de los cargos que
+	 * Agrega a la lista que recibe como parï¿½metro los nombres de los cargos que
 	 * existen <br>
-	 * en el subárbol que comienza en este punto del organigrama
+	 * en el subï¿½rbol que comienza en este punto del organigrama
 	 * 
 	 * @param lista La lista en la que se van a adicionar los cargos que existen en
-	 *              el subárbol <br>
+	 *              el subï¿½rbol <br>
 	 *              que comienza en este punto del organigrama
 	 */
 	public void darListaCargos(Collection lista) {
@@ -213,12 +213,12 @@ public class CargoSupermercado implements Serializable {
 	}
 
 	/**
-	 * Agrega a la lista que recibe como parámetro los nombres de los cargos que se
+	 * Agrega a la lista que recibe como parï¿½metro los nombres de los cargos que se
 	 * encuentran <br>
-	 * vacantes en el subárbol que comienza en este punto del organigrama
+	 * vacantes en el subï¿½rbol que comienza en este punto del organigrama
 	 * 
 	 * @param lista La lista en la que se van a adicionar los cargos disponibles en
-	 *              el subárbol <br>
+	 *              el subï¿½rbol <br>
 	 *              que comienza en este punto del organigrama
 	 */
 	public void darListaCargosDisponibles(Collection lista) {
@@ -249,7 +249,7 @@ public class CargoSupermercado implements Serializable {
 	/**
 	 * Busca un cargo en el organigrama que comienza en este elemento.
 	 * 
-	 * @param nCargo El nombre del cargo que se está buscando
+	 * @param nCargo El nombre del cargo que se estï¿½ buscando
 	 * @return El cargo con el nombre dado. Si no existe tal cargo en el <br>
 	 *         organigrama que comienza en el elemento se retorna null.
 	 */
@@ -271,8 +271,8 @@ public class CargoSupermercado implements Serializable {
 	 * Busca el cargo que ocupa un empleado en la empresa, dado el identificador del
 	 * empleado
 	 * 
-	 * @param idEmpleado El código del empleado del que se desea el cargo
-	 * @return El cargo del empleado con el código dado. Si no se encuentra el cargo
+	 * @param idEmpleado El cï¿½digo del empleado del que se desea el cargo
+	 * @return El cargo del empleado con el cï¿½digo dado. Si no se encuentra el cargo
 	 *         del empleado se retorna null
 	 */
 	public CargoSupermercado buscarCargoEmpleado(String idEmpleado) {
@@ -292,8 +292,8 @@ public class CargoSupermercado implements Serializable {
 	/**
 	 * Busca un empleado en el organigrama que comienza en este elemento.
 	 * 
-	 * @param idEmpleado El código del empleado que se está buscando
-	 * @return El empleado con el código dado. Si no se encuentra el empleado se
+	 * @param idEmpleado El cï¿½digo del empleado que se estï¿½ buscando
+	 * @return El empleado con el cï¿½digo dado. Si no se encuentra el empleado se
 	 *         retorna null
 	 */
 	public EmpleadoSupermercado buscarEmpleado(String idEmpleado) {
@@ -318,6 +318,7 @@ public class CargoSupermercado implements Serializable {
 	 * 
 	 * @return La cadena que identifica el cargo
 	 */
+	@Override
 	public String toString() {
 		return nombreCargo;
 	}

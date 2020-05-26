@@ -29,14 +29,9 @@ public class TiempoActualInventarioThread extends Thread {
 		activo = true;
 	}
 
-	public int tiempo() {
-		int segundos = 0;
-		segundos = iC.segundos() + segundos;
-		return segundos;
-	}
-
+	@Override
 	public void run() {
-		while (true) {
+		while (activo) {
 			Platform.runLater(new Runnable() {
 				@Override
 				public void run() {

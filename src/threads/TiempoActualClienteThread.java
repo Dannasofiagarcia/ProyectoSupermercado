@@ -4,7 +4,6 @@ import application.ClienteFarmaciaController;
 import application.FarmaciaController;
 import application.InventarioController;
 import javafx.application.Platform;
-import modelo.*;
 
 public class TiempoActualClienteThread extends Thread {
 
@@ -29,9 +28,11 @@ public class TiempoActualClienteThread extends Thread {
 		this.fc = fc;
 		activo = true;
 	}
-/**
- * este método permite cambiar el tiempo del reloj
- */
+
+	/**
+	 * este método permite cambiar el tiempo del reloj
+	 */
+	@Override
 	public void run() {
 		while (activo) {
 			Platform.runLater(new Runnable() {

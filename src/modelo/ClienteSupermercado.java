@@ -61,8 +61,8 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna el contacto que alfabéticamente corresponde al menor contacto del
-	 * árbol que parte de este nodo
+	 * Retorna el contacto que alfabï¿½ticamente corresponde al menor contacto del
+	 * ï¿½rbol que parte de este nodo
 	 * 
 	 * @return contacto con menor nombre
 	 */
@@ -71,8 +71,8 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna el contacto que alfabéticamente corresponde al mayor contacto del
-	 * árbol que parte de este nodo
+	 * Retorna el contacto que alfabï¿½ticamente corresponde al mayor contacto del
+	 * ï¿½rbol que parte de este nodo
 	 * 
 	 * @return contacto con mayor nombre
 	 */
@@ -81,9 +81,9 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna la altura del árbol de contactos que comienza en este nodo
+	 * Retorna la altura del ï¿½rbol de contactos que comienza en este nodo
 	 * 
-	 * @return altura del árbol que comienza en este nodo
+	 * @return altura del ï¿½rbol que comienza en este nodo
 	 */
 	public int darAltura() {
 		if (esHoja())
@@ -96,9 +96,9 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna el número de contactos que hay en el árbol que comienza en este nodo
+	 * Retorna el nï¿½mero de contactos que hay en el ï¿½rbol que comienza en este nodo
 	 * 
-	 * @return número de contactos en el árbol que comienza en este nodo
+	 * @return nï¿½mero de contactos en el ï¿½rbol que comienza en este nodo
 	 */
 	public int darPeso() {
 		int p1 = (izquierda == null) ? 0 : izquierda.darPeso();
@@ -107,9 +107,9 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna el número de hojas que hay en el árbol que comienza en este nodo
+	 * Retorna el nï¿½mero de hojas que hay en el ï¿½rbol que comienza en este nodo
 	 * 
-	 * @return número de hojas que hay en el árbol que comienza en este nodo
+	 * @return nï¿½mero de hojas que hay en el ï¿½rbol que comienza en este nodo
 	 */
 	public int contarHojas() {
 		if (esHoja())
@@ -122,24 +122,24 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Inserta un nuevo contacto al árbol que comienza en este nodo.
+	 * Inserta un nuevo contacto al ï¿½rbol que comienza en este nodo.
 	 * 
 	 * @param nuevo el el nuevo contacto que se va a insertar - nuevo != null
-	 * @throws ContactoRepetidoException se lanza esta excepción si el contacto que
-	 *                                   se quiere agregar ya está en el directorio
+	 * @throws ContactoRepetidoException se lanza esta excepciï¿½n si el contacto que
+	 *                                   se quiere agregar ya estï¿½ en el directorio
 	 */
 	public void insertar(ClienteSupermercado nuevo) throws ClientesSupermercadoException {
 		if (compareTo(nuevo) == 0)
 			throw new ClientesSupermercadoException(nuevo.nombre);
 
 		if (compareTo(nuevo) > 0) {
-			// Debe agregar el nuevo contacto por el subárbol izquierdo
+			// Debe agregar el nuevo contacto por el subï¿½rbol izquierdo
 			if (izquierda == null)
 				izquierda = nuevo;
 			else
 				izquierda.insertar(nuevo);
 		} else {
-			// Debe agregar el nuevo contacto por el subárbol derecho
+			// Debe agregar el nuevo contacto por el subï¿½rbol derecho
 			if (derecha == null)
 				derecha = nuevo;
 			else
@@ -148,7 +148,7 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Implementación recursiva para localizar un contacto en el árbol que comienza
+	 * Implementaciï¿½n recursiva para localizar un contacto en el ï¿½rbol que comienza
 	 * en este nodo
 	 * 
 	 * @param unNombre nombre que se va a buscar - unNombre != null
@@ -165,11 +165,11 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Elimina un contacto del árbol que comienza en este nodo.
+	 * Elimina un contacto del ï¿½rbol que comienza en este nodo.
 	 * 
 	 * @param unNombre nombre del contacto que se va a eliminar - hay un contacto en
-	 *                 el árbol que se llama unNombre
-	 * @return el árbol de contactos después de eliminar el contacto indicado
+	 *                 el ï¿½rbol que se llama unNombre
+	 * @return el ï¿½rbol de contactos despuï¿½s de eliminar el contacto indicado
 	 */
 	public ClienteSupermercado eliminar(String codigo) {
 		if (esHoja())
@@ -180,11 +180,11 @@ public class ClienteSupermercado implements Serializable {
 				return derecha;
 			if (derecha == null)
 				return izquierda;
-			// Localiza el menor contacto del subárbol derecho
+			// Localiza el menor contacto del subï¿½rbol derecho
 			ClienteSupermercado sucesor = derecha.darMenor();
-			// Elimina del subárbol derecho el elemento que acaba de localizar
+			// Elimina del subï¿½rbol derecho el elemento que acaba de localizar
 			derecha = derecha.eliminar(sucesor.getCodigo());
-			// Deja el elemento localizado en la raíz del árbol de respuesta
+			// Deja el elemento localizado en la raï¿½z del ï¿½rbol de respuesta
 			sucesor.izquierda = izquierda;
 			sucesor.derecha = derecha;
 			return sucesor;
@@ -196,33 +196,33 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna una colección con los nombres de todos los contactos, ordenados
-	 * alfabéticamente en orden ascendente
+	 * Retorna una colecciï¿½n con los nombres de todos los contactos, ordenados
+	 * alfabï¿½ticamente en orden ascendente
 	 * 
-	 * @param acumulado colección donde se van agregando los nombres de los
+	 * @param acumulado colecciï¿½n donde se van agregando los nombres de los
 	 *                  contactos ordenadamente
 	 */
 
 	// La idea del metodo inorden es primero revisar todos los lados izquierdos, una
 	// vez hecho
-	// agregar la posicion que estabamos revisando y ahí si revisar los lados
+	// agregar la posicion que estabamos revisando y ahï¿½ si revisar los lados
 	// derechos
 
 	public void inorden(Collection acumulado) {
-		// Recorre en inorden el subárbol izquierdo
+		// Recorre en inorden el subï¿½rbol izquierdo
 		if (izquierda != null)
 			izquierda.inorden(acumulado);
-		// Incluye en el recorrido el contacto de la raíz
+		// Incluye en el recorrido el contacto de la raï¿½z
 		acumulado.add(this);
-		// Recorre en inorden el subárbol derecho
+		// Recorre en inorden el subï¿½rbol derecho
 		if (derecha != null)
 			derecha.inorden(acumulado);
 	}
 
 	/**
-	 * Indica si el árbol que comienza en este nodo es ordenado
+	 * Indica si el ï¿½rbol que comienza en este nodo es ordenado
 	 * 
-	 * @return true si el árbol que comienza en este nodo es ordenado
+	 * @return true si el ï¿½rbol que comienza en este nodo es ordenado
 	 */
 	public boolean esOrdenado() {
 		if (esHoja())
@@ -240,11 +240,11 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Cuenta el número de veces que aparece un contacto con un nombre que se recibe
-	 * como parámetro
+	 * Cuenta el nï¿½mero de veces que aparece un contacto con un nombre que se recibe
+	 * como parï¿½metro
 	 * 
-	 * @param nombreP nombre del contacto que se está buscando - nombreP != null
-	 * @return número de contactos con un nombre dado
+	 * @param nombreP nombre del contacto que se estï¿½ buscando - nombreP != null
+	 * @return nï¿½mero de contactos con un nombre dado
 	 */
 	public int contarOcurrencias(String codigo) {
 		int cuantos = 0;

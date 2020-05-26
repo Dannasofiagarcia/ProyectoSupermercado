@@ -11,20 +11,9 @@ import java.text.ParseException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-<<<<<<< HEAD
 import excepciones.ClientesSupermercadoException;
 import excepciones.ProductoSupermercadoException;
 import javafx.collections.FXCollections;
-=======
-import exception.ClientesSupermercadoException;
-import exception.ProductoSupermercadoException;
-import javafx.collections.FXCollections;
-import java.io.IOException;
-import java.time.LocalTime;
-
-import exception.ClientesSupermercadoException;
-
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,10 +22,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-<<<<<<< HEAD
-=======
-
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -48,29 +33,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-<<<<<<< HEAD
 import modelo.ClienteSupermercado;
 import modelo.ProductoSupermercado;
 import modelo.PromocionSupermercado;
 import modelo.Supermercado;
 import threads.TiempoThread;
-=======
-import model.ClienteSupermercado;
-import model.ProductoSupermercado;
-import model.PromocionSupermercado;
-import model.Supermercado;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import model.ProductoSupermercado;
-import model.Supermercado;
-//import threads.TiempoThread;
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 
 public class ControllerSupermercado {
 
@@ -269,15 +238,12 @@ public class ControllerSupermercado {
 		tiempoActual = LocalTime.now();
 		supermercado = new Supermercado("Supermercado");
 
-<<<<<<< HEAD
 		// supermercado.cargarProductos(".\\data\\ProductosSupermercado.txt");
 		supermercado.cargarProductos("data/ProductosSupermercado.txt");
 		tiempoThread = new TiempoThread(this);
 		tiempoThread.start();
 		cambiarTiempo();
 
-=======
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 		paneTabla.setVisible(true);
 		paneEliminar.setVisible(false);
 		paneBuscar.setVisible(false);
@@ -286,19 +252,7 @@ public class ControllerSupermercado {
 		tablaProductos.setPrefSize(347, 200);
 		paneTabla.setVisible(true);
 		configurarCanvas();
-<<<<<<< HEAD
 		cargar();
-	}
-
-	@FXML
-	void exportarArchivo(ActionEvent event) {
-		Stage stage = new Stage();
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Abrir archivo");
-		fileChooser.showOpenDialog(stage);
-=======
-
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 	}
 
 	@FXML
@@ -328,12 +282,9 @@ public class ControllerSupermercado {
 
 	@FXML
 	void registrarCliente(ActionEvent e) {
-<<<<<<< HEAD
 		paneEliminarCliente.setVisible(false);
 		paneMostrarInformacionCliente.setVisible(false);
 		paneRegistrarCliente.setVisible(true);
-=======
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 
 		registrar.setOnMouseClicked(mouse -> agregarCliente());
 	}
@@ -356,7 +307,7 @@ public class ControllerSupermercado {
 			Alert dialogo = new Alert(AlertType.INFORMATION);
 			dialogo.setTitle("Agregar cliente");
 			dialogo.setHeaderText(
-					"Se ha agregado con exito al cliente " + nombreCliente + " con codigo " + codigoCliente);
+					"Se ha agregado con ï¿½xito al cliente " + nombreCliente + " con cï¿½digo " + codigoCliente);
 			dialogo.show();
 		} catch (ClientesSupermercadoException e) {
 			Alert dialogo = new Alert(AlertType.ERROR);
@@ -393,7 +344,7 @@ public class ControllerSupermercado {
 		supermercado.eliminarClienteSupermercado(codigo);
 		Alert informacionE = new Alert(AlertType.INFORMATION);
 		informacionE.setTitle("Eliminar cliente");
-		informacionE.setHeaderText("Cliente eliminado con exito");
+		informacionE.setHeaderText("Cliente eliminado con ï¿½xito");
 		informacionE.show();
 
 	}
@@ -431,8 +382,8 @@ public class ControllerSupermercado {
 		} else {
 			Alert informacionE = new Alert(AlertType.ERROR);
 			informacionE.setTitle("Cliente no encontrado");
-			informacionE.setHeaderText(
-					"No se ha podido mostrar la informaciï¿½n del cliente, puesto que no fue encontrado");
+			informacionE
+					.setHeaderText("No se ha podido mostrar la informaciï¿½n del cliente, puesto que no fue encontrado");
 			informacionE.show();
 		}
 	}
@@ -440,7 +391,7 @@ public class ControllerSupermercado {
 	/**
 	 * Elimina un producto
 	 * 
-	 * @param ActionEvent e Es la accion que realiza el metodo en la ventana
+	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
 
 	@FXML
@@ -466,7 +417,7 @@ public class ControllerSupermercado {
 			supermercado.eliminarProducto(codigo);
 			Alert informacionE = new Alert(AlertType.INFORMATION);
 			informacionE.setTitle("Eliminar producto");
-			informacionE.setHeaderText("Producto eliminado con exito");
+			informacionE.setHeaderText("Producto eliminado con ï¿½xito");
 			informacionE.show();
 		} catch (ProductoSupermercadoException e) {
 			Alert informacionE = new Alert(AlertType.ERROR);
@@ -557,7 +508,7 @@ public class ControllerSupermercado {
 			supermercado.agregarProductoSupermercado(codigo, nombre, precio, ubicacion);
 			Alert creado = new Alert(AlertType.INFORMATION);
 			creado.setTitle("Crear producto");
-			creado.setHeaderText("Producto agregado con exito");
+			creado.setHeaderText("Producto agregado con ï¿½xito");
 			creado.show();
 		} catch (ParseException e) {
 			Alert parseE = new Alert(AlertType.ERROR);
@@ -588,15 +539,7 @@ public class ControllerSupermercado {
 			gc.drawImage(image, 0, 0);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-<<<<<<< HEAD
 		}
-=======
-		paneEliminarCliente.setVisible(false);
-		paneMostrarInformacionCliente.setVisible(false);
-		paneRegistrarCliente.setVisible(true);
-
-		registrar.setOnMouseClicked(mouse -> agregarCliente());
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 	}
 
 	/**
@@ -615,7 +558,6 @@ public class ControllerSupermercado {
 		realizarModificacionUbicacion.setOnMouseClicked(mouse -> realizarModificacionU());
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Modifica la ubicacion
 	 * 
@@ -649,31 +591,6 @@ public class ControllerSupermercado {
 
 	/**
 	 * Modifica el nombre
-=======
-		supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
-		Alert dialogo = new Alert(AlertType.INFORMATION);
-		dialogo.setTitle("Agregar cliente");
-		dialogo.setHeaderText("Se ha agregado con exito al cliente " + nombreCliente + " con codigo " + codigoCliente);
-		dialogo.show();
-
-		try {
-			supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
-			Alert dialogo = new Alert(AlertType.INFORMATION);
-			dialogo.setTitle("Agregar cliente");
-			dialogo.setHeaderText(
-					"Se ha agregado con ï¿½xito al cliente " + nombreCliente + " con cï¿½digo " + codigoCliente);
-			dialogo.show();
-		} catch (ClientesSupermercadoException e) {
-			Alert dialogo = new Alert(AlertType.ERROR);
-			dialogo.setTitle("Agregar cliente");
-			dialogo.setHeaderText(e.getMessage());
-			dialogo.show();
-		}
-	}
-
-	/**
-	 * Modifica la ubicacion
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
@@ -723,7 +640,7 @@ public class ControllerSupermercado {
 	}
 
 	/**
-	 * Modifica el código
+	 * Modifica el cï¿½digo
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
@@ -758,12 +675,12 @@ public class ControllerSupermercado {
 		if (producto != null) {
 			producto.setCodigo(codigoNuevo);
 			Alert parseE = new Alert(AlertType.INFORMATION);
-			parseE.setTitle("Modificar código");
-			parseE.setHeaderText("Se ha modificado correctamente el código");
+			parseE.setTitle("Modificar cï¿½digo");
+			parseE.setHeaderText("Se ha modificado correctamente el cï¿½digo");
 			parseE.show();
 		} else {
 			Alert parseE = new Alert(AlertType.ERROR);
-			parseE.setTitle("Modificar código");
+			parseE.setTitle("Modificar cï¿½digo");
 			parseE.setHeaderText("No se encontro el producto que se deseaba modificar");
 			parseE.show();
 		}
@@ -773,21 +690,12 @@ public class ControllerSupermercado {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Modifica el precio
-=======
-	 * Modifica el precio ======= Elimina un cliente >>>>>>>
-	 * 378bf6232147068a01892b3d89d03f21d5a95279
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
 
 	@FXML
-<<<<<<< HEAD
-=======
-
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 	void modificarPrecio(ActionEvent e) {
 		paneEliminar.setVisible(false);
 		paneInsertarProducto.setVisible(false);
@@ -881,7 +789,7 @@ public class ControllerSupermercado {
 		columnaPrecio.setCellValueFactory(new PropertyValueFactory<ProductoSupermercado, Double>("precio"));
 
 		TableColumn<ProductoSupermercado, String> columnaUbicacion = new TableColumn<ProductoSupermercado, String>(
-				"Ubicación");
+				"Ubicaciï¿½n");
 		columnaUbicacion.setCellValueFactory(new PropertyValueFactory<ProductoSupermercado, String>("ubicacion"));
 
 		tablaProductos.setItems(productos);
@@ -898,7 +806,6 @@ public class ControllerSupermercado {
 	 */
 
 	@FXML
-<<<<<<< HEAD
 	void guardar() {
 		File archivo = new File("./data/Supermercado.txt");
 		try {
@@ -915,15 +822,6 @@ public class ControllerSupermercado {
 			excepcion1.setTitle("Guardar informaciï¿½n");
 			excepcion1.setHeaderText("Informaciï¿½n guardada con exito en el archivo");
 			excepcion1.show();
-=======
-	void cargarBoton(ActionEvent e) {
-	}
-
-	void eliminarClienteBoton(ActionEvent e) {
-		paneRegistrarCliente.setVisible(false);
-		paneMostrarInformacionCliente.setVisible(false);
-		paneEliminarCliente.setVisible(true);
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 
 		} catch (FileNotFoundException e) {
 			Alert excepcion2 = new Alert(AlertType.ERROR);
@@ -957,11 +855,10 @@ public class ControllerSupermercado {
 		}
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Exporta los datos
 	 * 
-	 * @param ActionEvent e Es la accion que realiza el método en la ventana
+	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
 
 	@FXML
@@ -982,13 +879,6 @@ public class ControllerSupermercado {
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
-=======
-		supermercado.eliminarClienteSupermercado(codigo);
-		Alert informacionE = new Alert(AlertType.INFORMATION);
-		informacionE.setTitle("Eliminar cliente");
-		informacionE.setHeaderText("Cliente eliminado con ï¿½xito");
-		informacionE.show();
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 
 	@FXML
 	void cargarBoton(ActionEvent e) {
@@ -999,12 +889,7 @@ public class ControllerSupermercado {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Ver empleados
-=======
-	 * <<<<<<< HEAD Ver empleados ======= Busca un cliente >>>>>>>
-	 * 378bf6232147068a01892b3d89d03f21d5a95279
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 	 * 
 	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
 	 */
@@ -1041,15 +926,6 @@ public class ControllerSupermercado {
 		tiempoActual = tiempoActual.plusSeconds(1);
 		hora.setText(DateTimeFormatter.ofPattern("hh:mm:ss a").format(tiempoActual));
 	}
-<<<<<<< HEAD
-=======
-
-	void buscarCliente(ActionEvent e) {
-		paneEliminarCliente.setVisible(false);
-		paneRegistrarCliente.setVisible(false);
-		paneBuscarCliente.setVisible(true);
-		// buscarClienteCodigo.setOnMouseClicked(mouse -> mostrarInformacionCliente());
->>>>>>> cd5a47b85c3df8a78a401c8a445bf4993b7243df
 
 	@FXML
 	public void buscarPromociones() {
@@ -1058,13 +934,13 @@ public class ControllerSupermercado {
 		PromocionSupermercado promo = supermercado.busquedaBinariaCodigo(promocion, codigo);
 		if (promo != null) {
 			Alert excepcion3 = new Alert(AlertType.INFORMATION);
-			excepcion3.setTitle("Informacion promoción");
-			excepcion3.setHeaderText("La promoción buscada ofrece " + promo.getPromocion());
+			excepcion3.setTitle("Informacion promociï¿½n");
+			excepcion3.setHeaderText("La promociï¿½n buscada ofrece " + promo.getPromocion());
 			excepcion3.show();
 		} else {
 			Alert excepcion3 = new Alert(AlertType.ERROR);
 			excepcion3.setTitle("Ha ocurrido un error");
-			excepcion3.setHeaderText("No se encontró ninguna promoción con ese nombre");
+			excepcion3.setHeaderText("No se encontrï¿½ ninguna promociï¿½n con ese nombre");
 			excepcion3.show();
 		}
 	}

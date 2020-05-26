@@ -14,8 +14,8 @@ public class Tiempo implements Comparable<Tiempo> {
 
 	public Tiempo() {
 		Random random = new Random();
-		this.hora = 0;
-		this.minuto = 0;
+		this.hora = random.nextInt(12) + 1;
+		this.minuto = random.nextInt(60) + 1;
 		String[] modos = { "AM", "PM" };
 		String rFormato = modos[hora % 2 == 0 ? 0 : 1];
 		this.formato = rFormato;
@@ -27,7 +27,7 @@ public class Tiempo implements Comparable<Tiempo> {
 	 */
 	@Override
 	public String toString() {
-		return agregarCero(hora) + ":" + agregarCero(minuto);
+		return agregarCero(hora) + ":" + agregarCero(minuto) + " " + formato;
 	}
 
 	/**
@@ -46,6 +46,11 @@ public class Tiempo implements Comparable<Tiempo> {
 		return msg;
 	}
 
+	/**
+	 * Este metodo permite obtener la hora de la llegada del producto de la farmacia
+	 * 
+	 * @return
+	 */
 	public int getHora() {
 		return hora;
 	}
@@ -54,6 +59,12 @@ public class Tiempo implements Comparable<Tiempo> {
 		this.hora = hora;
 	}
 
+	/**
+	 * este metodo permite obtener el minuto de la llegada del producto de la
+	 * farmacia
+	 * 
+	 * @return
+	 */
 	public int getMinuto() {
 		return minuto;
 	}
@@ -62,6 +73,12 @@ public class Tiempo implements Comparable<Tiempo> {
 		this.minuto = minuto;
 	}
 
+	/**
+	 * este metodo permite obtener le formato del tiempo de llegada dell producrto a
+	 * la farmacia
+	 * 
+	 * @return
+	 */
 	public String getFormato() {
 		return formato;
 	}

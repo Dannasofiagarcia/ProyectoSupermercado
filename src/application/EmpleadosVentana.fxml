@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerClientes">
    <children>
-      <Button fx:id="contratarEmpleado" layoutX="320.0" layoutY="113.0" mnemonicParsing="false" onAction="#contratarEmpleado" text="Contratar empleado" />
-      <Button fx:id="buscarEmpleado" layoutX="328.0" layoutY="148.0" mnemonicParsing="false" onAction="#buscarEmpleado" text="Buscar empleado" />
-      <Button fx:id="agregarCargo" layoutX="338.0" layoutY="222.0" mnemonicParsing="false" onAction="#agregarCargo" text="Agregar cargo" />
-      <Button fx:id="despedirEmpleado" layoutX="321.0" layoutY="185.0" mnemonicParsing="false" onAction="#despedirEmpleado" text="Despedir empleado" />
-      <Button fx:id="eliminarCargo" layoutX="338.0" layoutY="258.0" mnemonicParsing="false" onAction="#eliminarCargo" text="Eliminar cargo" />
+      <Button fx:id="contratarEmpleado" layoutX="321.0" layoutY="87.0" mnemonicParsing="false" onAction="#contratarEmpleado" text="Contratar empleado" />
+      <Button fx:id="buscarEmpleado" layoutX="328.0" layoutY="131.0" mnemonicParsing="false" onAction="#buscarEmpleado" text="Buscar empleado" />
+      <Button fx:id="agregarCargo" layoutX="335.0" layoutY="221.0" mnemonicParsing="false" onAction="#agregarCargo" text="Agregar cargo" />
+      <Button fx:id="despedirEmpleado" layoutX="321.0" layoutY="176.0" mnemonicParsing="false" onAction="#despedirEmpleado" text="Despedir empleado" />
+      <Button fx:id="eliminarCargo" layoutX="336.0" layoutY="266.0" mnemonicParsing="false" onAction="#eliminarCargo" text="Eliminar cargo" />
       <Pane fx:id="paneContratarEmpleado" layoutX="23.0" layoutY="18.0" prefHeight="308.0" prefWidth="255.0" visible="false">
          <children>
             <Label layoutX="105.0" layoutY="34.0" text="Nombre" />
@@ -88,11 +87,7 @@
             <Button fx:id="eliminar" layoutX="95.0" layoutY="167.0" mnemonicParsing="false" text="Eliminar" />
          </children>
       </Pane>
-      <Button layoutX="355.0" layoutY="294.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
-      <ImageView fitHeight="99.0" fitWidth="107.0" layoutX="331.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../img/empleado.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="355.0" layoutY="307.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+      <Canvas fx:id="canvas" height="65.0" layoutX="344.0" layoutY="11.0" width="66.0" />
    </children>
 </Pane>

@@ -23,6 +23,6 @@ The Supermarket project is made to centralize the management of this, its sales,
 
 ## **Analysis of the project's documentation**
 
-The project statement and everything it involves is described in this [document] (https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/EnunciadoProyecto.pdf).
+The project statement and everything it involves is described in this [document](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/EnunciadoProyecto.pdf).
 
 The functional and non-functional requirements are described in this document.

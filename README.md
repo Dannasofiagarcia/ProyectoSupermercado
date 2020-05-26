@@ -19,3 +19,5 @@ The Supermarket project is made to centralize the management of this, its sales,
 ![Captura de Pantalla 2020-05-26 a la(s) 1 00 41 a  m](https://user-images.githubusercontent.com/47890681/82865659-d9193600-9eec-11ea-91f0-453f6f499e0a.png)
 
 ### Let's manage all the merchandise
+![Captura de Pantalla 2020-05-26 a la(s) 1 01 20 a  m](https://user-images.githubusercontent.com/47890681/82867392-68741880-9ef0-11ea-93d7-a54d3b9c4e7f.png)
+

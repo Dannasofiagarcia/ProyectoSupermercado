@@ -29,3 +29,6 @@ The project statement and everything it involves is described in this [document]
 
 # 2.Functional and non-functional requirements
 The functional and non-functional requirements are described in this [document](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/RequerimientosFuncionalesYNoFuncionales.pdf).
+
+# 3.Unit tests documentation
+The unit tests documentation are described in this [document](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/PruebasUnitarias.pdf).

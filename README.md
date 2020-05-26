@@ -3,3 +3,6 @@ This repository it's all about the project of the subject of Algorithms and prog
 
 ## Developers
 This project was made up by Danna Sofia García Trujillo, telematics engineering student, and Andrea Núñez Rodríguez, systems engineering student, both from Icesi University in Colombia.
+
+## What's the Supermarket Project about?
+The Supermarket project is made to centralize the management of this, its sales, its customers, staff and other establishments that are within it and affect its accounting, all in order to optimize the management of the supermarket.

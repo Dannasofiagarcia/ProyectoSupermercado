@@ -4,7 +4,7 @@ This repository it's all about the project of the subject of Algorithms and prog
 ## Developers :two_women_holding_hands:
 This project was made up by Danna Sofia García Trujillo, telematics engineering student, and Andrea Núñez Rodríguez, systems engineering student, both from Icesi University in Colombia.
 
-## What's the Supermarket Project about? 
+## What's the Supermarket Project about? :octocat:
 The Supermarket project is made to centralize the management of this, its sales, its customers, staff and other establishments that are within it and affect its accounting, all in order to optimize the management of the supermarket.
 
 ## A little view of the project's user interface
@@ -36,5 +36,7 @@ The unit tests documentation are described in this [document](https://github.com
 ## Design of the project
 In this part you will find everything related with the design of the project, such as class diagram and the mockups of the user interface
 
-### 1.Class Diagram
-This links
+### :one: Class Diagram
+This [links](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/Diagrama%20de%20clases.pdf) contains the class diagram of the project 
+### :two: Mockups
+This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/tree/master/docs/Wireframe%20proyecto) contains the mockups of the user interface

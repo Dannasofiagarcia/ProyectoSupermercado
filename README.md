@@ -21,4 +21,8 @@ The Supermarket project is made to centralize the management of this, its sales,
 ### ***Let's manage all the merchandise***
 ![Captura de Pantalla 2020-05-26 a la(s) 1 01 20 a  m](https://user-images.githubusercontent.com/47890681/82867392-68741880-9ef0-11ea-93d7-a54d3b9c4e7f.png)
 
-## **ANALYSIS OF THE PROJECT'S DOCUMENTATION**
+## **Analysis of the project's documentation**
+
+The project statement and everything it involves is described in this [document] (https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/EnunciadoProyecto.pdf).
+
+The functional and non-functional requirements are described in this document.

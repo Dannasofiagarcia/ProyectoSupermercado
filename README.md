@@ -40,3 +40,5 @@ In this part you will find everything related with the design of the project, su
 This [links](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/Diagrama%20de%20clases.pdf) contains the class diagram of the project 
 ### :two: Mockups
 This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/tree/master/docs/Wireframe%20proyecto) contains the mockups of the user interface
+### :three: Class Diagram with tests
+This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/Diagrama%20test.pdf) contains the class diagram with tests.

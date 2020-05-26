@@ -10,3 +10,4 @@ The Supermarket project is made to centralize the management of this, its sales,
 ## A little view of the project's user interface
 
 ![Captura de Pantalla 2020-05-26 a la(s) 12 44 59 a  m](https://user-images.githubusercontent.com/47890681/82864545-6018df00-9eea-11ea-8b76-1cd024788701.png)
+![Captura de Pantalla 2020-05-26 a la(s) 1 01 54 a  m](https://user-images.githubusercontent.com/47890681/82865594-b8e97700-9eec-11ea-9c06-65063a289fac.png)

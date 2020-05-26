@@ -42,3 +42,6 @@ This [links](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/maste
 This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/tree/master/docs/Wireframe%20proyecto) contains the mockups of the user interface
 ### :three: Class Diagram with tests
 This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/Diagrama%20test.pdf) contains the class diagram with tests.
+
+## Video 
+Click here to watch the video explanation of the Supermarket Project.

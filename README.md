@@ -6,3 +6,6 @@ This project was made up by Danna Sofia García Trujillo, telematics engineering
 
 ## What's the Supermarket Project about?
 The Supermarket project is made to centralize the management of this, its sales, its customers, staff and other establishments that are within it and affect its accounting, all in order to optimize the management of the supermarket.
+
+## A little view of the project's user interface
+

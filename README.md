@@ -45,4 +45,4 @@ This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/tree/master
 This [link](https://github.com/Dannasofiagarcia/ProyectoSupermercado/blob/master/docs/Diagrama%20test.pdf) contains the class diagram with tests.
 
 ## Video 
-Click here to watch the video explanation of the Supermarket Project.
+Click [here](https://www.youtube.com/watch?v=YM_cQDLJ7ZY&feature=youtu.be) to watch the video explanation of the Supermarket Project.

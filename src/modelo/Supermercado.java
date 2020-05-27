@@ -46,13 +46,12 @@ public class Supermercado implements Serializable {
 	// -----------------------------------------------------------------
 
 	// -----------------------------------------------------------------
-	// Metodos clase cargo (ï¿½rbol n-rio)
+	// Metodos clase cargo (arbol n-rio)
 	// -----------------------------------------------------------------
 
 	/**
-	 * Agrega un nuevo cargo al organigrama de la empresa. Si el organigrama estï¿½
-	 * vacï¿½o, <br>
-	 * se ignora el valor del parï¿½metro nCargoJefe.
+	 * Agrega un nuevo cargo al organigrama de la empresa. Si el organigrama esta
+	 * vacio se ignora el valor del parametro nCargoJefe.
 	 * 
 	 * @param nCargo     El nombre del nuevo cargo - nCargo!=null && nCargo!=""
 	 * @param pago       El salario asociado con el nuevo cargo - pago>0
@@ -88,10 +87,10 @@ public class Supermercado implements Serializable {
 	 */
 	public void eliminarCargo(String nCargo) throws CargoSupermercadoException {
 		if (administrador == null)
-			throw new CargoSupermercadoException("El cargo que desea eliminar es invï¿½lido");
+			throw new CargoSupermercadoException("El cargo que desea eliminar es invalido");
 
 		if (administrador.darNombreCargo().equalsIgnoreCase(nCargo)) {
-			// Se quiere eliminar el cargo de la raï¿½z
+			// Se quiere eliminar el cargo de la raiz
 			if (administrador.esHoja() && administrador.estaVacante())
 				administrador = null;
 			else
@@ -99,7 +98,7 @@ public class Supermercado implements Serializable {
 		} else {
 			CargoSupermercado padre = administrador.buscarJefe(nCargo);
 			if (padre == null)
-				throw new CargoSupermercadoException("El cargo que desea eliminar es invï¿½lido");
+				throw new CargoSupermercadoException("El cargo que desea eliminar es invalido");
 
 			padre.eliminarCargo(nCargo);
 		}
@@ -126,7 +125,7 @@ public class Supermercado implements Serializable {
 
 		EmpleadoSupermercado temp = buscarEmpleado(codigo);
 		if (temp != null)
-			throw new CargoSupermercadoException("ï¿½Identidad repetida! El cï¿½digo de cada empleado es ï¿½nico");
+			throw new CargoSupermercadoException("Identidad repetida, recuerde que el código del empleado es único");
 
 		cargo.contratar(nombre, codigo, turno);
 	}
@@ -183,8 +182,8 @@ public class Supermercado implements Serializable {
 	 * Busca el cargo con el nombre dado
 	 * 
 	 * @param nCargo Nombre del Cargo
-	 * @return El cargo con el nombre dado. Si el cargo no se encontrï¿½ se retornï¿½
-	 *         null
+	 * @return El cargo con el nombre dado. Si el cargo no se encontrï¿½ se
+	 *         retornï¿½ null
 	 */
 	public CargoSupermercado buscarCargo(String nCargo) {
 		return administrador == null ? null : administrador.buscarCargo(nCargo);
@@ -310,18 +309,21 @@ public class Supermercado implements Serializable {
 	 * <b>post: </b>El contacto ha sido agregado al directorio.
 	 * 
 	 * @param nom   nombre del contacto - nom != null
-	 * @param tel   telï¿½fono del contacto
-	 * @param dir   direcciï¿½n del contacto
-	 * @param email direcciï¿½n electrï¿½nica del contacto
-	 * @throws ContactoRepetidoException cuando ya existe un contacto con ese nombre
+	 * @param tel   telefono del contacto
+	 * @param dir   direccion del contacto
+	 * @param email direccion electronica del contacto
+	 * @throws ClientesSupermercadoException
+	 * @throws ContactoRepetidoException     cuando ya existe un contacto con ese
+	 *                                       nombre
 	 */
 	public void agregarClienteSupermercado(String nombre, String apellido, String codigo, String correo)
 			throws ClientesSupermercadoException {
 		ClienteSupermercado c = new ClienteSupermercado(nombre, apellido, codigo, correo);
 		if (clienteRaiz == null)
 			clienteRaiz = c;
-		else
+		else {
 			clienteRaiz.insertar(c);
+		}
 	}
 
 	/**
@@ -349,8 +351,8 @@ public class Supermercado implements Serializable {
 	/**
 	 * Retorna una lista ordenada con los nombres de los contactos
 	 * 
-	 * @return lista de contactos ordenada por orden alfabï¿½tico. Si la lista estï¿½
-	 *         vacï¿½a retorna null
+	 * @return lista de contactos ordenada por orden alfabï¿½tico. Si la lista
+	 *         estï¿½ vacï¿½a retorna null
 	 */
 	public Collection darListaClientes() {
 		if (clienteRaiz == null)
@@ -403,8 +405,8 @@ public class Supermercado implements Serializable {
 	}
 
 	/**
-	 * Cuenta el nï¿½mero de contactos en el directorio que tienen el nombre dado como
-	 * parï¿½metro <br>
+	 * Cuenta el nï¿½mero de contactos en el directorio que tienen el nombre dado
+	 * como parï¿½metro <br>
 	 * <b>pre: </b> El ï¿½rbol de contactos no es vacï¿½o
 	 * 
 	 * @param nombre nombre del contacto del cual se estï¿½ contando el nï¿½mero de
@@ -475,8 +477,8 @@ public class Supermercado implements Serializable {
 	 * por cï¿½digo. <br>
 	 * <b>post: </b> Se agregï¿½ un vuelo a la ciudad. <br>
 	 * 
-	 * @param codigo  El cï¿½digo del vuelo - cï¿½digo >= 0 && no existe otro vuelo con
-	 *                ese cï¿½digo
+	 * @param codigo  El cï¿½digo del vuelo - cï¿½digo >= 0 && no existe otro vuelo
+	 *                con ese cï¿½digo
 	 * @param fecha   La fecha en la que se realizarï¿½ el vuelo - fecha != null y
 	 *                fecha tiene el formato yyyy-MM-dd
 	 * @param horas   La hora de despegue - 0 <= hora < 24
@@ -517,7 +519,8 @@ public class Supermercado implements Serializable {
 	 * Este mï¿½todo localiza y retorna un vuelo, dado su cï¿½digo
 	 * 
 	 * @param codigo El cï¿½digo que se estï¿½ buscando
-	 * @return Se retornï¿½ el vuelo con el cï¿½digo pedido o null si no lo encuentra
+	 * @return Se retornï¿½ el vuelo con el cï¿½digo pedido o null si no lo
+	 *         encuentra
 	 */
 	public ProductoSupermercado buscarProductoSupermercado(String codigo) {
 		for (ProductoSupermercado p = primerProducto; p != null; p = p.getSiguiente()) {
@@ -643,6 +646,7 @@ public class Supermercado implements Serializable {
 		agregarPromociones(promocion3);
 		agregarPromociones(promocion4);
 		agregarPromociones(promocion5);
+		agregarPromociones(promocion6);
 
 	}
 

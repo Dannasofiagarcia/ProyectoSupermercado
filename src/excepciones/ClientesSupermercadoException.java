@@ -2,7 +2,7 @@ package excepciones;
 
 public class ClientesSupermercadoException extends Exception {
 
-	public ClientesSupermercadoException(String mensaje) {
-		super(mensaje);
+	public ClientesSupermercadoException() {
+		super("El cliente que desea agregar ya se encuentra en el sistema del supermercado");
 	}
 }

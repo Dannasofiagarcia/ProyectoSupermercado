@@ -15,17 +15,17 @@
          <children>
             <Canvas fx:id="canvasLogo" height="90.0" layoutX="34.0" layoutY="11.0" width="96.0" />
             <Separator layoutX="-10.0" layoutY="109.0" prefHeight="10.0" prefWidth="579.0" />
-            <Button layoutX="456.0" layoutY="143.0" mnemonicParsing="false" onAction="#cargarBoton" text="Cargar" />
-            <Button layoutX="371.0" layoutY="142.0" mnemonicParsing="false" onAction="#exportar" text="Exportar" />
+            <Button layoutX="431.0" layoutY="142.0" mnemonicParsing="false" onAction="#cargarDatosClientes" text="Cargar datos clientes" />
+            <Button layoutX="356.0" layoutY="142.0" mnemonicParsing="false" onAction="#exportar" text="Exportar" />
             <Label layoutX="160.0" layoutY="15.0" prefHeight="74.0" prefWidth="389.0" text="SUPERMERCADO" textFill="#ff903c">
                <font>
                   <Font name="System Bold" size="47.0" />
                </font>
             </Label>
-            <Button layoutX="376.0" layoutY="200.0" mnemonicParsing="false" onAction="#registrarCliente" prefHeight="25.0" prefWidth="123.0" text="Registrar cliente" />
-            <Button layoutX="376.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarClienteBoton" prefHeight="25.0" prefWidth="123.0" text="Eliminar cliente" />
+            <Button layoutX="392.0" layoutY="200.0" mnemonicParsing="false" onAction="#registrarCliente" prefHeight="25.0" prefWidth="123.0" text="Registrar cliente" />
+            <Button layoutX="391.0" layoutY="247.0" mnemonicParsing="false" onAction="#eliminarClienteBoton" prefHeight="25.0" prefWidth="123.0" text="Eliminar cliente" />
             <Button layoutX="435.0" layoutY="354.0" mnemonicParsing="false" onAction="#agregarProducto" text="Insertar producto" />
-            <Button fx:id="buscarCliente" layoutX="376.0" layoutY="293.0" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="25.0" prefWidth="123.0" text="Buscar cliente" />
+            <Button fx:id="buscarCliente" layoutX="389.0" layoutY="293.0" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="25.0" prefWidth="123.0" text="Buscar cliente" />
             <Separator layoutX="-4.0" layoutY="341.0" prefHeight="10.0" prefWidth="569.0" />
             <Separator layoutY="593.0" prefHeight="10.0" prefWidth="569.0" />
             <Label layoutX="188.0" layoutY="355.0" prefHeight="21.0" prefWidth="81.0" text="Inventario">
@@ -37,8 +37,8 @@
             <Button layoutX="434.0" layoutY="388.0" mnemonicParsing="false" onAction="#eliminarProducto" text="Eliminar producto" />
             <Button layoutX="439.0" layoutY="423.0" mnemonicParsing="false" onAction="#buscarProducto" text="Buscar producto" />
             <Button fx:id="modificarCodigo" layoutX="438.0" layoutY="493.0" mnemonicParsing="false" onAction="#modificarCodigo" text="Modificar código" />
-            <TextField fx:id="rutaDatos" layoutX="26.0" layoutY="143.0" prefHeight="25.0" prefWidth="318.0" />
-            <Label layoutX="48.0" layoutY="116.0" text="Cargar la información de los clientes">
+            <TextField fx:id="rutaDatos" layoutX="19.0" layoutY="143.0" prefHeight="25.0" prefWidth="318.0" promptText="Nombre para el archivo donde se exportaran los clientes" />
+            <Label layoutX="15.0" layoutY="116.0" text="Panel de información de los clientes">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -130,7 +130,7 @@
                   <Button fx:id="eliminarCliente" layoutX="130.0" layoutY="73.0" mnemonicParsing="false" text="Eliminar" />
                </children>
             </Pane>
-            <Button fx:id="guardar" layoutX="231.0" layoutY="603.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+            <Button fx:id="guardar" layoutX="234.0" layoutY="603.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
             <Pane fx:id="paneBuscarCliente" layoutX="29.0" layoutY="189.0" prefHeight="137.0" prefWidth="318.0" visible="false">
                <children>
                   <Label layoutX="85.0" layoutY="9.0" text="Ingrese el código del cliente" />

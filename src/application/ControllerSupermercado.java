@@ -1,15 +1,18 @@
 package application;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import excepciones.ClientesSupermercadoException;
 import excepciones.ProductoSupermercadoException;
@@ -33,6 +36,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modelo.ClienteSupermercado;
@@ -302,17 +306,25 @@ public class ControllerSupermercado {
 		String codigoCliente = codigoClienteAgregar.getText();
 		String correoCliente = correoClienteAgregar.getText();
 
-		try {
-			supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
-			Alert dialogo = new Alert(AlertType.INFORMATION);
-			dialogo.setTitle("Agregar cliente");
-			dialogo.setHeaderText(
-					"Se ha agregado con ï¿½xito al cliente " + nombreCliente + " con cï¿½digo " + codigoCliente);
-			dialogo.show();
-		} catch (ClientesSupermercadoException e) {
+		if (!(nombreCliente.equals("") && apellidoCliente.equals("") && codigoCliente.equals("")
+				&& correoCliente.contentEquals(""))) {
+			try {
+				supermercado.agregarClienteSupermercado(nombreCliente, apellidoCliente, codigoCliente, correoCliente);
+				Alert dialogo = new Alert(AlertType.INFORMATION);
+				dialogo.setTitle("Agregar cliente");
+				dialogo.setHeaderText(
+						"Se ha agregado con éxito al cliente " + nombreCliente + " con código " + codigoCliente);
+				dialogo.show();
+			} catch (ClientesSupermercadoException e) {
+				Alert dialogo = new Alert(AlertType.ERROR);
+				dialogo.setTitle("Agregar cliente");
+				dialogo.setHeaderText(e.getMessage());
+				dialogo.show();
+			}
+		} else {
 			Alert dialogo = new Alert(AlertType.ERROR);
 			dialogo.setTitle("Agregar cliente");
-			dialogo.setHeaderText(e.getMessage());
+			dialogo.setHeaderText("No ingreso la información completa, por favor intentelo nuevamente");
 			dialogo.show();
 		}
 	}
@@ -320,7 +332,7 @@ public class ControllerSupermercado {
 	/**
 	 * Elimina un cliente
 	 * 
-	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
+	 * @param ActionEvent e Es la accion que realiza el metodo en la ventana
 	 */
 
 	@FXML
@@ -329,30 +341,28 @@ public class ControllerSupermercado {
 		paneMostrarInformacionCliente.setVisible(false);
 		paneEliminarCliente.setVisible(true);
 
-		eliminarCliente.setOnMouseClicked(mouse -> eliminarCliente());
-	}
-
-	/**
-	 * Elimina un cliente
-	 * 
-	 */
-
-	void eliminarCliente() {
 		paneEliminarCliente.setVisible(false);
 		String codigo = codigoClienteEliminar.getText();
 
-		supermercado.eliminarClienteSupermercado(codigo);
-		Alert informacionE = new Alert(AlertType.INFORMATION);
-		informacionE.setTitle("Eliminar cliente");
-		informacionE.setHeaderText("Cliente eliminado con ï¿½xito");
-		informacionE.show();
+		if (!(codigo.equals(""))) {
 
+			supermercado.eliminarClienteSupermercado(codigo);
+			Alert informacionE = new Alert(AlertType.INFORMATION);
+			informacionE.setTitle("Eliminar cliente");
+			informacionE.setHeaderText("Cliente eliminado con ï¿½xito");
+			informacionE.show();
+		} else {
+			Alert dialogo = new Alert(AlertType.ERROR);
+			dialogo.setTitle("Eliminar cliente");
+			dialogo.setHeaderText("No ingreso la información completa, por favor intentelo nuevamente");
+			dialogo.show();
+		}
 	}
 
 	/**
 	 * Busca un cliente
 	 * 
-	 * @param ActionEvent e Es la accion que realiza el mï¿½todo en la ventana
+	 * @param ActionEvent e Es la accion que realiza el metodo en la ventana
 	 */
 
 	@FXML
@@ -383,7 +393,7 @@ public class ControllerSupermercado {
 			Alert informacionE = new Alert(AlertType.ERROR);
 			informacionE.setTitle("Cliente no encontrado");
 			informacionE
-					.setHeaderText("No se ha podido mostrar la informaciï¿½n del cliente, puesto que no fue encontrado");
+					.setHeaderText("No se ha podido mostrar la informacion del cliente, puesto que no fue encontrado");
 			informacionE.show();
 		}
 	}
@@ -412,21 +422,27 @@ public class ControllerSupermercado {
 		String codigo = codigoProductoEliminar.getText();
 		paneEliminar.setVisible(false);
 		paneTabla.setVisible(true);
-
-		try {
-			supermercado.eliminarProducto(codigo);
-			Alert informacionE = new Alert(AlertType.INFORMATION);
-			informacionE.setTitle("Eliminar producto");
-			informacionE.setHeaderText("Producto eliminado con ï¿½xito");
-			informacionE.show();
-		} catch (ProductoSupermercadoException e) {
-			Alert informacionE = new Alert(AlertType.ERROR);
-			informacionE.setTitle("Eliminar producto");
-			informacionE.setHeaderText(e.getMessage());
-			informacionE.show();
+		if (!(codigo.equals(""))) {
+			try {
+				supermercado.eliminarProducto(codigo);
+				Alert informacionE = new Alert(AlertType.INFORMATION);
+				informacionE.setTitle("Eliminar producto");
+				informacionE.setHeaderText("Producto eliminado con ï¿½xito");
+				informacionE.show();
+			} catch (ProductoSupermercadoException e) {
+				Alert informacionE = new Alert(AlertType.ERROR);
+				informacionE.setTitle("Eliminar producto");
+				informacionE.setHeaderText(e.getMessage());
+				informacionE.show();
+			}
+			actualizarProductos();
+			tablaProductos = crearTablaProductos();
+		} else {
+			Alert dialogo = new Alert(AlertType.ERROR);
+			dialogo.setTitle("Eliminar producto");
+			dialogo.setHeaderText("No ingreso la información completa, por favor intentelo nuevamente");
+			dialogo.show();
 		}
-		actualizarProductos();
-		tablaProductos = crearTablaProductos();
 	}
 
 	/**
@@ -457,22 +473,28 @@ public class ControllerSupermercado {
 		paneBuscar.setVisible(false);
 		paneTabla.setVisible(true);
 
-		if (producto != null) {
-			Alert informacionP = new Alert(AlertType.INFORMATION);
-			informacionP.setTitle("Informaciï¿½n producto");
-			informacionP
-					.setHeaderText("El nombre del producto es " + producto.getNombre() + "\nEl precio del producto es "
-							+ producto.getPrecio() + "\nEl producto esta ubicado en " + producto.getUbicacion());
+		if (!(codigoBuscar.equals(""))) {
+			if (producto != null) {
+				Alert informacionP = new Alert(AlertType.INFORMATION);
+				informacionP.setTitle("Información producto");
+				informacionP.setHeaderText(
+						"El nombre del producto es " + producto.getNombre() + "\nEl precio del producto es "
+								+ producto.getPrecio() + "\nEl producto esta ubicado en " + producto.getUbicacion());
 
-			informacionP.show();
+				informacionP.show();
+			} else {
+				Alert informacionP = new Alert(AlertType.ERROR);
+				informacionP.setTitle("Información producto");
+				informacionP.setHeaderText("El producto no existe");
+
+				informacionP.show();
+			}
 		} else {
-			Alert informacionP = new Alert(AlertType.ERROR);
-			informacionP.setTitle("Informaciï¿½n producto");
-			informacionP.setHeaderText("El producto no existe");
-
-			informacionP.show();
+			Alert dialogo = new Alert(AlertType.ERROR);
+			dialogo.setTitle("Agregar cliente");
+			dialogo.setHeaderText("No ingreso la información completa, por favor intentelo nuevamente");
+			dialogo.show();
 		}
-		producto = null;
 	}
 
 	/**
@@ -508,12 +530,12 @@ public class ControllerSupermercado {
 			supermercado.agregarProductoSupermercado(codigo, nombre, precio, ubicacion);
 			Alert creado = new Alert(AlertType.INFORMATION);
 			creado.setTitle("Crear producto");
-			creado.setHeaderText("Producto agregado con ï¿½xito");
+			creado.setHeaderText("Producto agregado con exito");
 			creado.show();
 		} catch (ParseException e) {
 			Alert parseE = new Alert(AlertType.ERROR);
 			parseE.setTitle("Ha ocurrido un error");
-			parseE.setHeaderText("Ocurriï¿½ un error al convertir un valor");
+			parseE.setHeaderText("Ocurrió un error al convertir un valor");
 			parseE.show();
 		} catch (ProductoSupermercadoException e) {
 			Alert excepcion = new Alert(AlertType.ERROR);
@@ -789,7 +811,7 @@ public class ControllerSupermercado {
 		columnaPrecio.setCellValueFactory(new PropertyValueFactory<ProductoSupermercado, Double>("precio"));
 
 		TableColumn<ProductoSupermercado, String> columnaUbicacion = new TableColumn<ProductoSupermercado, String>(
-				"Ubicaciï¿½n");
+				"Ubicación");
 		columnaUbicacion.setCellValueFactory(new PropertyValueFactory<ProductoSupermercado, String>("ubicacion"));
 
 		tablaProductos.setItems(productos);
@@ -863,13 +885,38 @@ public class ControllerSupermercado {
 
 	@FXML
 	void exportar(ActionEvent e) {
-		String ruta = rutaDatos.getText();
-		try {
-			supermercado.guardarProductos(ruta);
-		} catch (IOException iE) {
+		BufferedWriter bw;
+		if (rutaDatos.getText() != "") {
+			try {
+				bw = new BufferedWriter(new FileWriter("./data/" + rutaDatos.getText()));
+				ArrayList<ClienteSupermercado> clientes = (ArrayList<ClienteSupermercado>) supermercado
+						.darListaClientes();
+				if (clientes != null) {
+					for (int i = 0; i < clientes.size(); i++) {
+						bw.write(clientes.get(i).getNombre() + " " + clientes.get(i).getApellido() + " "
+								+ clientes.get(i).getCodigo() + "\n");
+					}
+					Alert excepcion3 = new Alert(AlertType.INFORMATION);
+					excepcion3.setTitle("Datos exportados con éxito");
+					excepcion3.setHeaderText("Puede encontrar el archivo de los datos en la carpeta Data del programa");
+					excepcion3.show();
+
+				} else {
+					bw.write("Actualmente el supermercado no cuenta con ningun cliente");
+				}
+
+				bw.close();
+			} catch (IOException e1) {
+				Alert excepcion3 = new Alert(AlertType.ERROR);
+				excepcion3.setTitle("No fue posible exportar el archivo");
+				excepcion3.setHeaderText("Ocurrio un error intentando exportar el archivo");
+				excepcion3.show();
+			}
+		} else {
 			Alert excepcion3 = new Alert(AlertType.ERROR);
-			excepcion3.setTitle("No fue posible leer el archivo");
-			excepcion3.setHeaderText("Ocurrio un error intentando leer el archivo");
+			excepcion3.setTitle("Ruta ingresada no es válida");
+			excepcion3.setHeaderText(
+					"Ingreso un nombre de archivo que no es válido o puede estar ya ocupado, por favor intente de nuevo con otro nombre");
 			excepcion3.show();
 		}
 	}
@@ -881,11 +928,21 @@ public class ControllerSupermercado {
 	 */
 
 	@FXML
-	void cargarBoton(ActionEvent e) {
-		String ruta = rutaDatos.getText();
-		supermercado.cargarProductos(ruta);
-		actualizarProductos();
-		tablaProductos = crearTablaProductos();
+	void cargarDatosClientes(ActionEvent event) {
+		Stage stage = new Stage();
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Abrir archivo");
+		File file = fileChooser.showOpenDialog(stage);
+		if (file != null) {
+			supermercado.cargarProductos(file.getAbsolutePath());
+			actualizarProductos();
+			tablaProductos = crearTablaProductos();
+		} else {
+			Alert excepcion3 = new Alert(AlertType.ERROR);
+			excepcion3.setTitle("No eligió un archivo");
+			excepcion3.setHeaderText("Para continuar debe seleccionar un archivo, por favor intente de nuevo");
+			excepcion3.show();
+		}
 	}
 
 	/**
@@ -934,13 +991,13 @@ public class ControllerSupermercado {
 		PromocionSupermercado promo = supermercado.busquedaBinariaCodigo(promocion, codigo);
 		if (promo != null) {
 			Alert excepcion3 = new Alert(AlertType.INFORMATION);
-			excepcion3.setTitle("Informacion promociï¿½n");
-			excepcion3.setHeaderText("La promociï¿½n buscada ofrece " + promo.getPromocion());
+			excepcion3.setTitle("Informacion promoción");
+			excepcion3.setHeaderText("La promoción buscada ofrece " + promo.getPromocion());
 			excepcion3.show();
 		} else {
 			Alert excepcion3 = new Alert(AlertType.ERROR);
 			excepcion3.setTitle("Ha ocurrido un error");
-			excepcion3.setHeaderText("No se encontrï¿½ ninguna promociï¿½n con ese nombre");
+			excepcion3.setHeaderText("No se encontró ninguna promoción con ese nombre");
 			excepcion3.show();
 		}
 	}

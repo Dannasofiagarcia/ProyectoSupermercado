@@ -9,7 +9,6 @@ Gaseosa Manzana,3204,4500.0,Pasillo 4
 Salsa rosada,3212,5500.0,Pasillo 3
 Gaseosa Colombiana,3213,4500.0,Pasillo 4
 Mayonesa,4201,5500.0,Pasillo 3
-Salsa de piña,4310,5500.0,Pasillo 3
 Aceite de girasol,4567,9000.0,Pasillo 2
 Salsa de tomate,5421,5500.0,Pasillo 3
 Mostaza,5954,5500.0,Pasillo 3

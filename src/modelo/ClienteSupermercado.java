@@ -96,7 +96,8 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Retorna el n�mero de contactos que hay en el �rbol que comienza en este nodo
+	 * Retorna el n�mero de contactos que hay en el �rbol que comienza en este
+	 * nodo
 	 * 
 	 * @return n�mero de contactos en el �rbol que comienza en este nodo
 	 */
@@ -125,12 +126,13 @@ public class ClienteSupermercado implements Serializable {
 	 * Inserta un nuevo contacto al �rbol que comienza en este nodo.
 	 * 
 	 * @param nuevo el el nuevo contacto que se va a insertar - nuevo != null
-	 * @throws ContactoRepetidoException se lanza esta excepci�n si el contacto que
-	 *                                   se quiere agregar ya est� en el directorio
+	 * @throws ContactoRepetidoException se lanza esta excepci�n si el contacto
+	 *                                   que se quiere agregar ya est� en el
+	 *                                   directorio
 	 */
 	public void insertar(ClienteSupermercado nuevo) throws ClientesSupermercadoException {
 		if (compareTo(nuevo) == 0)
-			throw new ClientesSupermercadoException(nuevo.nombre);
+			throw new ClientesSupermercadoException();
 
 		if (compareTo(nuevo) > 0) {
 			// Debe agregar el nuevo contacto por el sub�rbol izquierdo
@@ -148,8 +150,8 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Implementaci�n recursiva para localizar un contacto en el �rbol que comienza
-	 * en este nodo
+	 * Implementaci�n recursiva para localizar un contacto en el �rbol que
+	 * comienza en este nodo
 	 * 
 	 * @param unNombre nombre que se va a buscar - unNombre != null
 	 * @return contacto asociado al nombre. Si no lo encuentra retorna null;
@@ -240,8 +242,8 @@ public class ClienteSupermercado implements Serializable {
 	}
 
 	/**
-	 * Cuenta el n�mero de veces que aparece un contacto con un nombre que se recibe
-	 * como par�metro
+	 * Cuenta el n�mero de veces que aparece un contacto con un nombre que se
+	 * recibe como par�metro
 	 * 
 	 * @param nombreP nombre del contacto que se est� buscando - nombreP != null
 	 * @return n�mero de contactos con un nombre dado
